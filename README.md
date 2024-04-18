@@ -1,2 +1,2 @@
 # Selenium-on-Amazon
-This repository showcases my automation testing capabilities with Cucumber, Selenium and TestNG. All classes are written in Java.
+This repository showcases my automation testing capabilities with Cucumber, Selenium and TestNG in the Java programming language.
