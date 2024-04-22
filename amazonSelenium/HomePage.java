@@ -15,8 +15,17 @@ public class HomePage {
 		this.driver = driver;
 	}
 	
+	public void searchProduct(String productName) {
+		System.out.println("in search product method");
+
+		enterSearchTextbox(productName);
+		clickSearchBtn();
+	}
+	
 	// enter in search box method
 	public void enterSearchTextbox (String searchInput) {
+		System.out.println("search input");
+
 		driver.findElement(searchTextbox).sendKeys(searchInput);
 	}
 	

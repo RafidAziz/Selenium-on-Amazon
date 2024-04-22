@@ -1,9 +1,6 @@
 package amazonSelenium;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -21,21 +18,25 @@ public class AmazonSearchTest extends BaseTest {
 //        System.out.println("After creating driver object");
 		
         initializeDriver();
-        //navigateToURL(baseUrl);
+        homePage = new HomePage(driver);
+        searchResultsPage = new AmazonSearchResultsPage(driver);
+		System.out.println(baseUrl);
+		System.out.println(driver);
+
 	}
 	
 	@Test // Test case for searching a product and displaying
 		  // results of the search
-	public void searchProductOnAmazon() {
+	public void searchProductOnAmazonAndAssertResultsPage() {
 //        System.out.println("Before going to amazon website");
 	
 		// Open Amazon's home page
 //		driver.get("https://www.amazon.com");
-        navigateToURL(baseUrl);
+//        navigateToURL(baseUrl);
 //        WebDriverWait wait = new WebDriverWait(driver, 10);
 		
 		// locate search textbox by id
-		WebElement searchTextbox = driver.findElement(By.id("twotabsearchtextbox"));
+//		WebElement searchTextbox = driver.findElement(By.id("twotabsearchtextbox"));
         // Check if the element is located correctly
 //        if (searchTextbox.isDisplayed()) {
 //            System.out.println("Element is located correctly.");
@@ -45,17 +46,26 @@ public class AmazonSearchTest extends BaseTest {
 		
 		// clear searchTextbox
 		// type 'ipad mini 6' in search box
-		searchTextbox.clear();
-		searchTextbox.click();
-		searchTextbox.sendKeys("iPad Mini 6 woohoohooo");
-		System.out.println(searchTextbox.getText());
+//		searchTextbox.clear();
+//		searchTextbox.click();
+//		searchTextbox.sendKeys("iPad Mini 6 woohoohooo");
+//		System.out.println(searchTextbox.getText());
 		
 		// locate search button by class name
-		WebElement searchBtn = driver.findElement(By.id("nav-search-submit-button"));
-		searchBtn.click();
+//		WebElement searchBtn = driver.findElement(By.id("nav-search-submit-button"));
+//		searchBtn.click();
 		
-		// Include testng assertion code
-
+		// navigate to amazon home page
+        navigateToURL(baseUrl);
+		System.out.println(baseUrl);
+		System.out.println(driver);
+		
+		// search product
+		homePage.searchProduct("iPad Mini 6");
+		
+		// assert search results page is shown
+		Assert.assertTrue(searchResultsPage.isSearchResultsDisplayed(),
+				"Error: Search results is not displayed");
 
 		// locate by name
 		// locate by tag name
