@@ -7,6 +7,8 @@ public class BaseTest {
 	protected WebDriver driver;
 	protected HomePage homePage;
 	protected AmazonSearchResultsPage searchResultsPage;
+	protected CreateAccountPage createAccountPage;
+	protected SignInPage signInPage;
 
     public void initializeDriver() {
         System.setProperty("webdriver.chrome.driver", 

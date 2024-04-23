@@ -41,4 +41,15 @@ public class CreateAccountPage {
 	public void clickContinueBtn () {
 		driver.findElement(continueBtn).click();
 	}
+	
+	// check all fields entered 
+	public boolean checkAllFieldsEntered() {
+		if (driver.findElement(customerNameTxt).getText() != "" &&
+				driver.findElement(emailTxt).getText() != "" &&
+				driver.findElement(passwordTxt).getText() != "" &&
+				driver.findElement(confirmPasswordTxt).getText() != "") {
+			return true;
+		}
+		return false;
+	}
 }

@@ -20,6 +20,9 @@ public class AmazonSearchTest extends BaseTest {
         initializeDriver();
         homePage = new HomePage(driver);
         searchResultsPage = new AmazonSearchResultsPage(driver);
+        createAccountPage = new CreateAccountPage(driver);
+        signInPage = new SignInPage(driver);
+        
 		System.out.println(baseUrl);
 		System.out.println(driver);
 
@@ -27,7 +30,7 @@ public class AmazonSearchTest extends BaseTest {
 	
 	@Test // Test case for searching a product and displaying
 		  // results of the search
-	public void searchProductOnAmazonAndAssertResultsPage() {
+	public void testSearchProductOnAmazon() {
 //        System.out.println("Before going to amazon website");
 	
 		// Open Amazon's home page
@@ -77,7 +80,7 @@ public class AmazonSearchTest extends BaseTest {
 	}
 	
 	@Test // Test case for creating a new user account
-	public void createAccount() {
+	public void testCreateAccount() {
 //		System.out.println("in create account test case");
 		
 		// Open Amazon's home page
@@ -85,34 +88,47 @@ public class AmazonSearchTest extends BaseTest {
 //		driver.get("https://www.amazon.com");
 		
 		// Go to login page
-		WebElement accountAndLists = driver.findElement(By.id("nav-link-accountList"));
-		accountAndLists.click();
+        homePage.clickSignInBtn();
+//		WebElement accountAndLists = driver.findElement(By.id("nav-link-accountList"));
+//		accountAndLists.click();
 		
 		// Go to create account page
-		WebElement createAccountBtn = driver.findElement(By.id("createAccountSubmit"));
-		createAccountBtn.click();
+        signInPage.clickCreateAccBtn();
+//		WebElement createAccountBtn = driver.findElement(By.id("createAccountSubmit"));
+//		createAccountBtn.click();
 		
 		// Locate name textbox and enter name
-		WebElement customerNameTxt = driver.findElement(By.name("customerName"));
-		customerNameTxt.sendKeys("customer name");
+        createAccountPage.enterCustomerName("customerName");
+//		WebElement customerNameTxt = driver.findElement(By.name("customerName"));
+//		customerNameTxt.sendKeys("customer name");
 		
 		// Locate mobile/email textbox and enter email
-		WebElement emailTxt = driver.findElement(By.cssSelector("input[class='a-input-text a-span12 a-spacing-micro auth-required-field auth-require-claim-validation']"));
-		emailTxt.sendKeys("email");
+        createAccountPage.enterEmailMobile("email or mobile");
+//		WebElement emailTxt = driver.findElement(By.cssSelector("input[class='a-input-text a-span12 a-spacing-micro auth-required-field auth-require-claim-validation']"));
+//		emailTxt.sendKeys("email");
 		
 		// Locate password textbox and enter password
-		WebElement passwordTxt = driver.findElement(By.id("ap_password"));
-		passwordTxt.sendKeys("password");
+        createAccountPage.enterPassword("password");
+//		WebElement passwordTxt = driver.findElement(By.id("ap_password"));
+//		passwordTxt.sendKeys("password");
 		
 		// Locate re-enter password textbox and enter password
-		WebElement passwordCheckTxt = driver.findElement(By.id("ap_password_check"));
-		passwordCheckTxt.sendKeys("password");
-		
-		// Click continue button
-		WebElement continueBtn = driver.findElement(By.id("continue"));
-		continueBtn.click();
+        createAccountPage.enterConfirmPassword("password");
+//		WebElement passwordCheckTxt = driver.findElement(By.id("ap_password_check"));
+//		passwordCheckTxt.sendKeys("password");
 		
 		// Include testng assertion code
+        System.out.println("All fields entered: " + createAccountPage.checkAllFieldsEntered());
+        Assert.assertTrue(createAccountPage.checkAllFieldsEntered(),
+        		"Error: One or more fields are not entered");
+        
+		// Click continue button
+        createAccountPage.clickContinueBtn();
+        
+//		WebElement continueBtn = driver.findElement(By.id("continue"));
+//		continueBtn.click();
+		
+
 	}
 	
 	@AfterClass
