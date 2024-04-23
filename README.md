@@ -3,4 +3,4 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 
 It is an ongoing work in progress.
 
-Next task to do: Edit Create Account method in 'AmazonSearchTest.java' to adopt POM practice
+Next task to do: Add 'test login' test case
