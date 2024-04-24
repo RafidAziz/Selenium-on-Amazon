@@ -131,6 +131,44 @@ public class AmazonSearchTest extends BaseTest {
 
 	}
 	
+	@Test 
+	public void testValidLogin() {
+		// Open Amazon's home page
+		// Go to login page
+		// enter email
+		// click continue
+		// enter password
+		// click sign in
+		// assert login successful
+        navigateToURL(baseUrl);
+        homePage.clickSignInBtn();
+		signInPage.enterEmailOrMobile("rafidamazontest@gmail.com");
+		signInPage.clickContinueBtn();
+		signInPage.enterPassword("rafidamazontest");
+		signInPage.clickSignInBtn();
+		Assert.assertTrue(homePage.checkHelloAccName(), "Error: Login was not successful");
+	}
+	
+	@Test
+	public void testInvalidLogin() {
+		// Open Amazon's home page
+		// Go to login page
+		// enter email
+		// click continue
+		// enter password
+		// click sign in
+		// assert login successful
+        navigateToURL(baseUrl);
+        homePage.clickSignInBtn();
+		signInPage.enterEmailOrMobile("rafidamazontest@gmail.com");
+		signInPage.clickContinueBtn();
+		signInPage.enterPassword("incorrect password");
+		signInPage.clickSignInBtn();
+        navigateToURL(baseUrl);
+        System.out.println("Invalid login check " + homePage.checkHelloAccName());
+		Assert.assertFalse(homePage.checkHelloAccName());
+	}
+	
 	@AfterClass
 	public void tearDown() {
 		if (driver!= null) {

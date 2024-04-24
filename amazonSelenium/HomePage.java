@@ -10,6 +10,7 @@ public class HomePage {
 	private By searchTextbox = By.id("twotabsearchtextbox");
 	private By searchBtn = By.id("nav-search-submit-button");
 	private By signInBtn = By.id("nav-link-accountList");
+	private By helloAccName = By.cssSelector("span[id=\"nav-link-accountList-nav-line-1\"]");
 	
 	public HomePage (WebDriver driver) {
 		this.driver = driver;
@@ -37,5 +38,14 @@ public class HomePage {
 	// click 'sign in' button
 	public void clickSignInBtn() {
 		driver.findElement(signInBtn).click();
+	}
+	
+	// check user is signed in
+	public boolean checkHelloAccName() {
+		// check account name appears
+		if (driver.findElement(helloAccName).getText().contains("rafid")) {
+			return true;
+		}
+		return false;
 	}
 }

@@ -12,6 +12,12 @@ public class CreateAccountPage {
 	private By passwordTxt = By.id("ap_password");
 	private By confirmPasswordTxt = By.id("ap_password_check");
 	private By continueBtn = By.id("continue");
+	private By conditionsOfUseLink = By.linkText("Conditions of Use");
+	private By privacyNoticeLink = By.linkText("Privacy Notice");
+	private By helpLink = By.linkText("\n" + 
+			"      Help\n" + 
+			"    ");
+
 
 	public CreateAccountPage (WebDriver driver) {
 		this.driver = driver;
@@ -40,6 +46,18 @@ public class CreateAccountPage {
 	// click continue btn
 	public void clickContinueBtn () {
 		driver.findElement(continueBtn).click();
+	}
+	
+	public void clickConditionsOfUseLink() {
+		driver.findElement(conditionsOfUseLink).click();
+	}
+	
+	public void clickPrivacyNoticeLink() {
+		driver.findElement(privacyNoticeLink).click();
+	}
+	
+	public void clickHelpLink() {
+		driver.findElement(helpLink).click();
 	}
 	
 	// check all fields entered 
