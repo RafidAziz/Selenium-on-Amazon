@@ -169,6 +169,35 @@ public class AmazonSearchTest extends BaseTest {
 		Assert.assertFalse(homePage.checkHelloAccName());
 	}
 	
+	@Test 
+	public void testLinksInCreateAccPage() {
+		String conditionsOfUseUrl = "https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088";
+		String privacyNoticeUrl = "https://www.amazon.com/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496";
+		String helpUrl = "https://www.amazon.com/gp/help/customer/display.html";
+		
+		// Open Amazon's home page
+		// Go to login page
+		// Go to create account page
+		navigateToURL(baseUrl);
+        homePage.clickSignInBtn();
+        signInPage.clickCreateAccBtn();
+        
+        
+		// Click 'conditions of use' link, assert, navigate back
+		// Click 'privacy notice' link, assert, navigate back
+		// Click 'help' link, assert
+        createAccountPage.clickConditionsOfUseLink();
+        Assert.assertEquals(driver.getCurrentUrl(), conditionsOfUseUrl);
+        driver.navigate().back();
+        
+        createAccountPage.clickPrivacyNoticeLink();
+        Assert.assertEquals(driver.getCurrentUrl(), privacyNoticeUrl);
+        driver.navigate().back();
+        
+        createAccountPage.clickHelpLink();
+        Assert.assertEquals(driver.getCurrentUrl(), helpUrl);
+	}
+	
 	@AfterClass
 	public void tearDown() {
 		if (driver!= null) {

@@ -14,10 +14,7 @@ public class CreateAccountPage {
 	private By continueBtn = By.id("continue");
 	private By conditionsOfUseLink = By.linkText("Conditions of Use");
 	private By privacyNoticeLink = By.linkText("Privacy Notice");
-	private By helpLink = By.linkText("\n" + 
-			"      Help\n" + 
-			"    ");
-
+	private By helpLink = By.xpath("//a[@href='/help']");
 
 	public CreateAccountPage (WebDriver driver) {
 		this.driver = driver;

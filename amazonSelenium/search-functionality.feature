@@ -4,7 +4,11 @@ Feature: Search Product
   Background:
   Given User is on the home page
 
-  Scenario: Search product with valid input
-    When User searches "iPad Mini 6"
+  Scenario Outline: Search product with valid input
+    When User searches "<productName>"
     And User clicks on the search button
     Then User should be redirected to the results page
+		
+		Examples:
+		| productName |
+		| iPad Mini 6 |
