@@ -1,16 +1,22 @@
 package amazonSelenium;
-import java.util.*;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
-import io.cucumber.testng.*;
-//import cucumber.api.c
-//import cucumber.api.CucumberOptions;
-//import cucumber.api.testng.CucumberFeatureWrapper;
-//import cucumber.api.testng.TestNGCucumberRunner;
 
-public class RunCucumberWithTestNG {
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(
+    features = "src/main/java/amazonSelenium", // Specify the path to your feature files
+    plugin = {"pretty"}
+)
+public class RunCucumberWithTestNG extends AbstractTestNGCucumberTests {
 
     public static void main(String[] args) {
         // Create TestNG XML suite programmatically
@@ -21,16 +27,8 @@ public class RunCucumberWithTestNG {
         test.setName("Search Test");
 
         // Create a TestNG XmlClass and add it to the XmlTest
-        XmlClass testClass = new XmlClass(TestNGCucumberRunner.class);
+        XmlClass testClass = new XmlClass(RunCucumberWithTestNG.class);
         test.getClasses().add(testClass);
-
-        // Create a Map to hold your parameters (Cucumber options)
-        Map<String, String> parameters = new HashMap<String, String>();
-        parameters.put("plugin", "pretty");
-        parameters.put("features", "/seleniumDemo/src/main/java/amazonSelenium");
-
-        // Set the parameters to the XmlClass
-        testClass.setParameters(parameters);
 
         // Run the TestNG suite
         TestNG testNG = new TestNG();

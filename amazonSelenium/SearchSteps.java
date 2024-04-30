@@ -1,6 +1,7 @@
 package amazonSelenium;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 
 import io.cucumber.java.en.*;
 
@@ -30,6 +31,6 @@ public class SearchSteps extends BaseTest{
     @Then ("User should be redirected to the results page")
     public void userViewProducts() {
     	Assert.assertTrue(searchResultsPage.isSearchResultsDisplayed(), 
-    			"Error: Search results not displayed");
+    			"Error: Search results not displayed");    	
     }
 }
