@@ -3,4 +3,7 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 
 It is an ongoing work in progress.
 
-Next task to do: Write 'RunCucumberWithTestNG.java' and 'TestNGCucumberRunner.java' to integrate Cucumber with the project
+Next task to do: 
+- rename RunCucumberWithTestNG to RunSearch
+- create RunLogin
+- create RunAll
