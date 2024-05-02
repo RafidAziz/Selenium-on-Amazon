@@ -12,7 +12,7 @@ Feature: User Authentication
     Then User should be logged in successfully
 
     Examples: 
-      | email or mobile  					| password 				|
+      | emailOrMobile  						| password 				|
       |	rafidamazontest@gmail.com	|	rafidamazontest	|
 
   Scenario Outline: Invalid user login
@@ -23,6 +23,6 @@ Feature: User Authentication
     Then User should be logged in successfully
 
     Examples: 
-      | email or mobile  					| password 					|
+      | emailOrMobile  						| password 					|
       |	rafidamazontest@gmail.com	|	invalidpassword		|
       |	rafidamazontest@gmail.com	|										|      

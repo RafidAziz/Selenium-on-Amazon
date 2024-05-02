@@ -10,5 +10,6 @@ Feature: Search Product
     Then User should be redirected to the results page
 		
 		Examples:
-		| productName |
-		| iPad Mini 6 |
+		| productName		|
+		| iPad Mini Six	|
+		| Macbook Pro		|

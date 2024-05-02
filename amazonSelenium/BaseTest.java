@@ -10,10 +10,14 @@ public class BaseTest {
 	protected CreateAccountPage createAccountPage;
 	protected SignInPage signInPage;
 
-    public void initializeDriver() {
+    public void initializeDriverAndPages() {
         System.setProperty("webdriver.chrome.driver", 
         		"/Users/rafidaziz/eclipse-workspace/chromedriver");
         driver = new ChromeDriver();
+        homePage = new HomePage(driver);
+        searchResultsPage = new AmazonSearchResultsPage(driver);
+        createAccountPage = new CreateAccountPage(driver);
+        signInPage = new SignInPage(driver);
 //        driver.manage().window().maximize();
     }
 

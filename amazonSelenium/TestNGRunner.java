@@ -1,6 +1,5 @@
 package amazonSelenium;
 import java.util.Collections;
-
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;

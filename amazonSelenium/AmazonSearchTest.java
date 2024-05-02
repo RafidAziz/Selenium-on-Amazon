@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 public class AmazonSearchTest extends BaseTest {
 	
-//	private WebDriver driver;
 	private String baseUrl = "https://www.amazon.com";
 	
 	@BeforeClass
@@ -17,15 +16,7 @@ public class AmazonSearchTest extends BaseTest {
 //		driver = new ChromeDriver();
 //        System.out.println("After creating driver object");
 		
-        initializeDriver();
-        homePage = new HomePage(driver);
-        searchResultsPage = new AmazonSearchResultsPage(driver);
-        createAccountPage = new CreateAccountPage(driver);
-        signInPage = new SignInPage(driver);
-        
-		System.out.println(baseUrl);
-		System.out.println(driver);
-
+        initializeDriverAndPages();
 	}
 	
 	@Test // Test case for searching a product and displaying
@@ -204,4 +195,4 @@ public class AmazonSearchTest extends BaseTest {
 			driver.quit();
 		}
 	}
-}
+} 

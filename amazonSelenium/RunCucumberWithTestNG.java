@@ -13,7 +13,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-    features = "src/main/java/amazonSelenium", // Specify the path to your feature files
+	features = "src/main/java/amazonSelenium/search-functionality.feature",
     plugin = {"pretty"}
 )
 public class RunCucumberWithTestNG extends AbstractTestNGCucumberTests {
