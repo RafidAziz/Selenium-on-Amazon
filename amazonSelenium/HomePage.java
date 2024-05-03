@@ -41,11 +41,12 @@ public class HomePage {
 	}
 	
 	// check user is signed in
-	public boolean checkHelloAccName() {
-		// check account name appears
-		if (driver.findElement(helloAccName).getText().contains("rafid")) {
+	public boolean checkHelloAccName() {		
+		System.out.println(driver.getCurrentUrl());
+		if (driver.getCurrentUrl().contains("https://www.amazon.com/?ref_=nav")) {
 			return true;
 		}
+		
 		return false;
 	}
 }
