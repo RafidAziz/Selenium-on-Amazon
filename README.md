@@ -5,3 +5,8 @@ It is an ongoing work in progress.
 
 Next task to do: 
 - create RunAll
+
+Test Cases Automated:
+- Valid login
+- Invalid login
+- Search product
