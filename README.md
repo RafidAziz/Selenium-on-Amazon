@@ -4,7 +4,7 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Next task to do: 
-- create RunAll
+- Add test case for 'View product' in 'search-functionality.feature' and 'SearchSteps.java'
 
 Test Cases Automated:
 - Valid login
