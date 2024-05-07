@@ -4,11 +4,14 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Next task to do: 
-- Add test case for 'View product' in 'search-functionality.feature' and 'SearchSteps.java'
+- Create 'cart-functionality.feature'
+- Create 'ProductDetails.java' POM
+- Add test case for 'Add product to cart' in 'cart-functionality.feature' and 'ProductDetails.java'
 
 Test Cases Automated:
 - Valid login
 - Invalid login
 - Search product
+- View product details
 
 To run the program, execute 'RunAll.java' in Eclipse as a 'Java Application'.
