@@ -4,9 +4,7 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Next task to do: 
-- Create 'cart-functionality.feature'
-- Create 'ProductDetails.java' POM
-- Add test case for 'Add product to cart' in 'cart-functionality.feature' and 'ProductDetails.java'
+- Finish writing 'add product' and 'remove product' test cases in 'ProductDetailsPage.java' and 'CartPage.java'
 
 Test Cases Automated:
 - Valid login
