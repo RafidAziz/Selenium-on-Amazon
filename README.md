@@ -3,8 +3,8 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 
 It is an ongoing work in progress.
 
-Next task to do: 
-- Finish writing 'add product' and 'remove product' test cases in 'ProductDetailsPage.java' and 'CartPage.java'
+Current task: 
+- Debug'add product' and 'remove product' test cases in product details and shopping cart pages + step definitions
 
 Test Cases Automated:
 - Valid login
