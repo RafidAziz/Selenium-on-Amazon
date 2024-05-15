@@ -11,5 +11,7 @@ Test Cases Automated:
 - Invalid login
 - Search product
 - View product details
+- Add product to cart
+- Remove product from cart
 
 To run the program, execute 'RunAll.java' in Eclipse as a 'Java Application'.
