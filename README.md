@@ -4,7 +4,7 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Current task: 
-- Debug'add product' and 'remove product' test cases in product details and shopping cart pages + step definitions
+- Debug multiple ChromeDrivers starting
 
 Test Cases Automated:
 - Valid login
