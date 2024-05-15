@@ -19,7 +19,7 @@ public class SearchSteps extends BaseTest{
 	// Search Product Steps
 	@Given("User is on the home page")
 	public void userIsOnHomePage() {
-		driver.get(baseUrl);
+		navigateToHomePage(baseUrl);
 	}
 	
     @When ("User searches {string}")
@@ -43,7 +43,7 @@ public class SearchSteps extends BaseTest{
     // View Product Steps
     @Given ("User is on the amazon search results page")
 	public void userIsOnSearchResultsPage() {
-		driver.get(searchResultsUrl);
+		navigateToURL(searchResultsUrl);
 	}
     
     @When ("User clicks on a product")

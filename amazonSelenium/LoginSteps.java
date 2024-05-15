@@ -16,7 +16,7 @@ public class LoginSteps extends BaseTest {
 	
 	@Given ("User is on the login page")
 	public void userIsOnLoginPage() {
-		navigateToURL(baseUrl);
+		navigateToHomePage(baseUrl);
 		homePage.clickSignInBtn();
 	}
 	
