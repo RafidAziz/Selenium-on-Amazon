@@ -4,7 +4,7 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Current task: 
-- Debug multiple ChromeDrivers starting
+- Program parallel execution to execute multiple test cases at the same time
 
 Test Cases Automated:
 - Valid login
