@@ -11,14 +11,15 @@ public class SearchSteps extends BaseTest{
 	private String baseUrl = "https://www.amazon.com";
 	private String searchResultsUrl = "https://www.amazon.com/s?k=ipad+mini+6&crid=19E0CL05GIZDJ&sprefix=ipad+mini+6%2Caps%2C336&ref=nb_sb_noss_2";
 	
-	@Before
-	public void setUp() {		
-        initializeDriverAndPages();
-	}
+//	@Before
+//	public void setUp() {		
+//        initializeDriverAndPages();
+//	}
 	
 	// Search Product Steps
 	@Given("User is on the home page")
 	public void userIsOnHomePage() {
+    	initializeDriverAndPages();
 		navigateToHomePage(baseUrl);
 	}
 	

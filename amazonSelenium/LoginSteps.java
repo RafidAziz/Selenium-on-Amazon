@@ -9,13 +9,14 @@ import io.cucumber.java.en.*;
 public class LoginSteps extends BaseTest {
 	private String baseUrl = "https://www.amazon.com";
 	
-	@Before
-	public void setUp() {		
-        initializeDriverAndPages();
-	}
+//	@Before
+//	public void setUp() {		
+//        initializeDriverAndPages();
+//	}
 	
 	@Given ("User is on the login page")
 	public void userIsOnLoginPage() {
+    	initializeDriverAndPages();
 		navigateToHomePage(baseUrl);
 		homePage.clickSignInBtn();
 	}
