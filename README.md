@@ -4,7 +4,9 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Current task: 
-- Program parallel execution to execute multiple test cases at the same time
+- Program parallel execution to execute multiple test cases at the same time by completing below tasks
+- Create LoginTest, SearchTest and CartTest runner classes
+- Create RunAllParallel runner class to run the above classes in parallel
 
 Test Cases Automated:
 - Valid login
