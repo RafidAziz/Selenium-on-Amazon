@@ -4,7 +4,7 @@ This repository showcases my automation testing capabilities with Cucumber, Sele
 It is an ongoing work in progress.
 
 Current task: 
-- Debug three missing test cases in 'RunAllParallel' runner 
+- Add 'log out' test case 
 
 Test Cases Automated:
 - Valid login
@@ -14,4 +14,6 @@ Test Cases Automated:
 - Add product to cart
 - Remove product from cart
 
-To run the program, execute 'RunAll.java' in Eclipse as a 'Java Application'.
+Execution instructions:
+- To run the program, execute 'RunAll.java' in Eclipse as a 'Java Application'.
+- To run parallel execution, execute 'RunAllParallel.java' in Eclipse as a 'Java Application'.
