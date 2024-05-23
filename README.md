@@ -23,4 +23,4 @@ Test Cases Automated:
 - Remove product from cart
 
 Current Task: 
-- Add 'log out' test case 
+- Add 'log out' test case (LoginSteps.java)
