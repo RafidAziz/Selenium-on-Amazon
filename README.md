@@ -1,7 +1,14 @@
 # Selenium-on-Amazon
-This repository showcases my automation testing capabilities with Cucumber, Selenium and TestNG in the Java programming language. 
+This repository showcases my automation testing capabilities. 
 
 It is an ongoing work in progress.
+
+Tech Stack:
+- Cucumber
+- Selenium
+- TestNG
+- Java
+- Gherkins 
 
 Current task: 
 - Add 'log out' test case 
