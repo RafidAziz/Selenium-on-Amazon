@@ -7,6 +7,11 @@ Execution Instructions:
 - To run the program, execute 'RunAll.java' in Eclipse as a 'Java Application'.
 - To run parallel execution, execute 'RunAllParallel.java' in Eclipse as a 'Java Application'.
 
+Testing Concepts Applied:
+- POM
+- BDD
+- TDD
+
 Tech Stack:
 - Cucumber
 - Selenium
