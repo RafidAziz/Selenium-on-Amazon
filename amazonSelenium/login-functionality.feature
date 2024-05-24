@@ -1,5 +1,6 @@
 Feature: User Authentication
   Test user login with valid and invalid credentials
+  Test log out
   
   Background:
   Given User is on the login page
@@ -25,4 +26,12 @@ Feature: User Authentication
     Examples: 
       | emailOrMobile  						| password 					|
       |	rafidamazontest@gmail.com	|	invalidpassword		|
-      |	rafidamazontest@gmail.com	|										|      
+      |	rafidamazontest@gmail.com	|										|
+      
+    Scenario: Log out
+			When User enters 'rafidamazontest@gmail.com'
+    	And User clicks on continue button
+    	And User enters password 'rafidamazontest'
+    	And User clicks on sign in button
+    	And User clicks on sign out button
+    	Then User should be logged out successfully          

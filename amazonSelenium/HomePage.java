@@ -10,6 +10,7 @@ public class HomePage {
 	private By searchTextbox = By.id("twotabsearchtextbox");
 	private By searchBtn = By.id("nav-search-submit-button");
 	private By signInBtn = By.id("nav-link-accountList");
+	private By signOutBtn = By.cssSelector("a[id='nav-item-signout']");
 //	private By cartBtn = By.cssSelector("span[class='nav-cart-icon nav-sprite']");
 	private By cartBtn = By.id("nav-cart-count");
 	private By helloAccName = By.cssSelector("span[id=\"nav-link-accountList-nav-line-1\"]");
@@ -40,6 +41,11 @@ public class HomePage {
 	// click 'sign in' button
 	public void clickSignInBtn() {
 		driver.findElement(signInBtn).click();
+	}
+	
+	// click 'sign out' button
+	public void clickSignOutBtn() {
+		driver.findElement(signOutBtn).click();
 	}
 	
 	// click shopping cart button
