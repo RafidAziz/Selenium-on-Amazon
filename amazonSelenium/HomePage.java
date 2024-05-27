@@ -2,6 +2,8 @@ package amazonSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class HomePage {
 
@@ -10,7 +12,8 @@ public class HomePage {
 	private By searchTextbox = By.id("twotabsearchtextbox");
 	private By searchBtn = By.id("nav-search-submit-button");
 	private By signInBtn = By.id("nav-link-accountList");
-	private By signOutBtn = By.cssSelector("a[id='nav-item-signout']");
+	private By accountList = By.id("nav-link-accountList");
+	private By signOutLink = By.xpath("//span[text()='Sign Out']");
 //	private By cartBtn = By.cssSelector("span[class='nav-cart-icon nav-sprite']");
 	private By cartBtn = By.id("nav-cart-count");
 	private By helloAccName = By.cssSelector("span[id=\"nav-link-accountList-nav-line-1\"]");
@@ -45,7 +48,13 @@ public class HomePage {
 	
 	// click 'sign out' button
 	public void clickSignOutBtn() {
-		driver.findElement(signOutBtn).click();
+		// hover over 'account & lists' drop down
+        Actions actions = new Actions(driver);
+        WebElement webElement = driver.findElement(accountList);
+        actions.moveToElement(webElement).perform();
+        
+        // click sign out button
+		driver.findElement(signOutLink).click();
 	}
 	
 	// click shopping cart button

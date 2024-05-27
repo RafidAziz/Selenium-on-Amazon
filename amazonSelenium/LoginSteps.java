@@ -54,6 +54,18 @@ public class LoginSteps extends BaseTest {
     public void userNotSignedInSuccessfully() {
 		Assert.assertFalse(homePage.checkHelloAccName(), "Error: Login was not successful");
     }
+    
+    // Log out test case
+	@And ("User clicks on sign out button")
+	public void userSignOut() {
+		homePage.clickSignOutBtn();
+	}
+	
+	@Then ("User should be logged out successfully")
+	public void userSignedOutSuccessfully() {
+		Assert.assertTrue(driver.getCurrentUrl().contains("https://www.amazon.com/ap/signin"), 
+				"Error: Log out was not successful");
+	}
 	
 	@After
 	public void tearDown() {
