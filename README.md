@@ -22,10 +22,11 @@ Tech Stack:
 Test Cases Automated:
 - Valid login
 - Invalid login
+- Log out
 - Search product
 - View product details
 - Add product to cart
 - Remove product from cart
 
 Current Task: 
-- Add 'log out' test case (LoginSteps.java)
+- Add 'create a list' test case
