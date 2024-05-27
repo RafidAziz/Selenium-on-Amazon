@@ -1,5 +1,5 @@
 # Selenium-on-Amazon
-This repository showcases my automation testing capabilities. 
+This repository showcases my automation testing capabilities on Amazon's web application. 
 
 It is an ongoing work in progress.
 
