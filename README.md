@@ -8,9 +8,9 @@ Execution Instructions:
 - To run parallel execution, execute 'RunAllParallel.java' in Eclipse as a 'Java Application'.
 
 Testing Concepts Applied:
-- POM
-- BDD
-- TDD
+- Page Object Model (POM)
+- Behaviour-Driven Development (BDD)
+- Test-Driven Development (TDD)
 
 Tech Stack:
 - Cucumber
