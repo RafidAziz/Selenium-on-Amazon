@@ -31,9 +31,9 @@ Test Cases Automated:
 Current Task: 
 - Add 'create a list' test case
   - ~~Write 'list-registry-functionality.feature'~~
-  - Write 'ListRegistrySteps.java'
-  - Write 'ListRegistryIntroPage.java'
-  - Add 'create a list' button locator in 'ListRegistryIntroPage.java'
+  - Write 'ListRegistrySteps.java' (in-progress)
+  - ~~Write 'ListRegistryIntroPage.java'~~
+  - ~~Add 'create a list' button locator in 'ListRegistryIntroPage.java'~~
   - Write 'RunListRegistry.java'
   - Add list locator in 'HomePage.java'
 
