@@ -8,5 +8,5 @@ Feature: Lists & Registries Module
   Scenario: Create a list
     When User clicks create a list button
     And User enters 'shopping list'
-    And User clicks create list button
+    And User clicks create list button to confirm creation
     Then User should see shopping list created successfully
