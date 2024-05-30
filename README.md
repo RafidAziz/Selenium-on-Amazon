@@ -35,5 +35,3 @@ Current Task:
   - ~~Write 'ListRegistryIntroPage.java'~~
   - ~~Add 'create a list' button locator in 'ListRegistryIntroPage.java'~~
   - Write 'RunListRegistry.java' (in-progress)
-  - Add list locator in 'HomePage.java'
-
