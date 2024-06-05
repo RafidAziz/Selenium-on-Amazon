@@ -27,12 +27,7 @@ Test Cases Automated:
 - View product details
 - Add product to cart
 - Remove product from cart
+- Create shopping list
 
 Current Task: 
-- Add 'create a list' test case
-  - ~~Write 'list-registry-functionality.feature'~~
-  - ~~Write 'ListRegistrySteps.java'~~
-  - ~~Write 'ListRegistryIntroPage.java'~~
-  - ~~Add 'create a list' button locator in 'ListRegistryIntroPage.java'~~
-  - Write 'RunListRegistry.java' (in-progress)
-  - Add 'RunListRegistry.java' in parallel runner class
+- Add 'delete shopping list' test case
