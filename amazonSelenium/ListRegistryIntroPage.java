@@ -2,6 +2,8 @@ package amazonSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.*;
@@ -12,7 +14,9 @@ public class ListRegistryIntroPage extends BaseTest {
 	private WebDriver driver;
 	
 	private By createListBtn = By.cssSelector(".a-button-input");
-	private By listTxt = By.cssSelector("#list-name");
+//	private By listTxt = By.cssSelector("#list-name");
+	private By listTxt = By.id("list-name");
+//	private By listTxt = By.xpath("//input[@id='list-name']");
 	private By confirmListBtn = By.xpath("//span[@class='a-button a-button-primary']//input[@type='submit']");
 	
 	public ListRegistryIntroPage(WebDriver driver) {
@@ -26,6 +30,14 @@ public class ListRegistryIntroPage extends BaseTest {
 	
 	// enter list name
 	public void enterListTxt(String listName) {
+        // wait for 2 seconds
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		driver.findElement(listTxt).clear();
 		driver.findElement(listTxt).sendKeys(listName);
 	}
 	

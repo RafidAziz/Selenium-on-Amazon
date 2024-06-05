@@ -11,9 +11,8 @@ public class ListRegistrySteps extends BaseTest {
 	private String baseUrl = "https://www.amazon.com";
 	private String listRegistryIntroUrl = "https://www.amazon.com/hz/wishlist/intro";
 	
-	@Given ("User is logged in with 'rafidamazontest@gmail.com' and 'rafidamazontest'"
-			+ "and redirected to the lists & registries page")
-	public void loginUserAndRedirectToListIntroPage(String emailOrMobile, String password) {
+	@Given ("User is logged in with {string} and {string} for List and Registry module")
+	public void listRegistryLoginUser(String emailOrMobile, String password) {
 		// sign in user
 		initializeDriverAndPages();
         navigateToHomePage(baseUrl);
@@ -22,7 +21,10 @@ public class ListRegistrySteps extends BaseTest {
         signInPage.clickContinueBtn();
         signInPage.enterPassword(password);
         signInPage.clickSignInBtn();
-        
+	}
+	
+	@And ("redirected to the lists & registries page")
+	public void userRedirectedToListIntroPage() {
         // go to list intro page
         navigateToURL(listRegistryIntroUrl);
 	}
@@ -33,7 +35,7 @@ public class ListRegistrySteps extends BaseTest {
 		listRegistryIntroPage.clickCreateListBtn();
 	}
 	
-	@And ("User enters 'shopping list'")
+	@And ("User enters shopping list {string}")
 	public void userEnterListName(String listName) {
 		listRegistryIntroPage.enterListTxt(listName);
 	}
@@ -46,5 +48,12 @@ public class ListRegistrySteps extends BaseTest {
 	@Then ("User should see shopping list created successfully")
 	public void listCreatedSuccessfully() {
 		listRegistryIntroPage.assertListCreatedSuccessfully();
+	}
+	
+	@After
+	public void tearDown() {
+		if (driver!= null) {
+			driver.quit();
+		}
 	}
 }

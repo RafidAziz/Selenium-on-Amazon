@@ -30,6 +30,10 @@ public class RunAllParallel {
         test3.setName("RunCart");
         test3.setXmlClasses(Arrays.asList(new XmlClass(RunCart.class)));
         
+        XmlTest test4 = new XmlTest(suite);
+        test4.setName("RunListRegistry");
+        test4.setXmlClasses(Arrays.asList(new XmlClass(RunListRegistry.class)));
+        
         // Set the suite to TestNG
         testng.setXmlSuites(Arrays.asList(suite));
         
