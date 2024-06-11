@@ -3,23 +3,23 @@ This repository showcases my automation testing capabilities on Amazon's web app
 
 It is an ongoing work in progress.
 
-Execution Instructions:
+## Execution Instructions
 - To run the program, execute 'RunAll.java' in Eclipse as a 'Java Application'.
 - To run parallel execution, execute 'RunAllParallel.java' in Eclipse as a 'Java Application'.
 
-Testing Concepts Applied:
+## Testing Concepts Applied
 - Page Object Model (POM)
 - Behaviour-Driven Development (BDD)
 - Test-Driven Development (TDD)
 
-Tech Stack:
+## Tech Stack
 - Cucumber
 - Selenium
 - TestNG
 - Java
 - Gherkins 
 
-Test Cases Automated:
+## Test Cases Automated
 - Valid login
 - Invalid login
 - Log out
@@ -29,5 +29,5 @@ Test Cases Automated:
 - Remove product from cart
 - Create shopping list
 
-Current Task: 
+## Current Task 
 - Add 'delete shopping list' test case
