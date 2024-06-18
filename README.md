@@ -28,6 +28,10 @@ It is an ongoing work in progress.
 - Add product to cart
 - Remove product from cart
 - Create shopping list
+- Delete shopping list
+
+## Backlog (Subject to Changes)
+- Checkout test case
 
 ## Current Task 
-- Add 'delete shopping list' test case
+- Set up CI/CD pipeline with Jenkins or Gitlab
