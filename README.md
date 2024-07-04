@@ -39,5 +39,7 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 ## Current Task 
 - Set up CI/CD pipeline with Jenkins or Gitlab
   - Install Github plugins in Jenkins
+  - github integration plugin 
+  - github branch source plugin
   - Install TestNG/Junit plugin
   - Install Cucumber Reports plugin
