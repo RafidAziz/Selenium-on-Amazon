@@ -35,11 +35,14 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Backlog (Subject to Changes)
 - Checkout test case
+- Check test reports for Cucumber and TestNG
 
 ## Current Task 
 - Set up CI/CD pipeline with Jenkins or Gitlab
+  - Install Java 11 
   - Install Github plugins in Jenkins
-  - github integration plugin 
-  - github branch source plugin
+    - github plugin
+    - github integration plugin
+    - github branch source plugin
   - Install TestNG/Junit plugin
   - Install Cucumber Reports plugin
