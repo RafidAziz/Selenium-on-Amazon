@@ -35,8 +35,6 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Backlog (Subject to Changes)
 - Checkout test case
-- Check test reports for Cucumber and TestNG
 
 ## Current Task 
-- Set up CI/CD pipeline with Jenkins or Gitlab
-  - Create pipeline
+- Check test reports for Cucumber and TestNG
