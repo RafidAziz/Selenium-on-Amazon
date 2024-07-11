@@ -38,4 +38,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Check test reports for Cucumber and TestNG
-  - Edit every runner's cucumber report title
+  - Execute RunAll runner
+  - Upload Cucumber and TestNG report
