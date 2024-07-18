@@ -39,7 +39,8 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Delete shopping list
 
 ## Backlog (Subject to Changes)
-- Checkout test case
+- Verify registry categories links
 
 ## Current Task 
-- Checkout test case
+- Verify registry categories links
+  - Stopped at writing steps definition
