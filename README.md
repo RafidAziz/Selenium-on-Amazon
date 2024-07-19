@@ -43,4 +43,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify registry categories links
-  - Stopped at writing steps definition
+  - Stopped at execution
