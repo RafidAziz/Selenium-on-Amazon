@@ -15,6 +15,8 @@ public class BaseTest {
 	protected CartPage cartPage;
 	protected ProductDetailsPage prodDetailsPage;
 	protected ListRegistryIntroPage listRegistryIntroPage;
+	protected YourListsPage yourListsPage;
+	protected RegistriesPage registriesPage;
 
     public void initializeDriverAndPages() {
         System.setProperty("webdriver.chrome.driver", 
@@ -27,6 +29,8 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         prodDetailsPage = new ProductDetailsPage(driver);
         listRegistryIntroPage = new ListRegistryIntroPage(driver);
+        yourListsPage = new YourListsPage(driver);
+        registriesPage = new RegistriesPage(driver);
 //        driver.manage().window().maximize();
     }
 

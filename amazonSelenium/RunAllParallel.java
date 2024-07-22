@@ -3,10 +3,18 @@ package amazonSelenium;
 import org.testng.TestNG;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
 import org.testng.xml.XmlClass;
 import java.util.Arrays;
 
-public class RunAllParallel {
+@CucumberOptions (
+		features = "src/main/java/amazonSelenium",
+	    plugin = {"pretty", "html:target/run-all-parallel-cucumber-reports.html"}
+	)
+public class RunAllParallel extends AbstractTestNGCucumberTests{
 
     public static void main(String[] args) {
         TestNG testng = new TestNG();

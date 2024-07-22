@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (	
 	features = "src/main/java/amazonSelenium/search-functionality.feature",
-    plugin = {"pretty", "html:target/cucumber-reports.html"}
+    plugin = {"pretty", "html:target/run-search-cucumber-reports.html"}
 )
 public class RunSearch extends AbstractTestNGCucumberTests {
 

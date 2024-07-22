@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 	features = "src/main/java/amazonSelenium/list-registry-functionality.feature",
-    plugin = {"pretty", "html:target/cucumber-reports.html"}
+    plugin = {"pretty", "html:target/run-list-registry-cucumber-reports.html"}
 )
 public class RunListRegistry extends AbstractTestNGCucumberTests {
     // No additional code needed here

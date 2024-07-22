@@ -14,9 +14,7 @@ public class ListRegistryIntroPage extends BaseTest {
 	private WebDriver driver;
 	
 	private By createListBtn = By.cssSelector(".a-button-input");
-//	private By listTxt = By.cssSelector("#list-name");
 	private By listTxt = By.id("list-name");
-//	private By listTxt = By.xpath("//input[@id='list-name']");
 	private By confirmListBtn = By.xpath("//span[@class='a-button a-button-primary']//input[@type='submit']");
 	
 	public ListRegistryIntroPage(WebDriver driver) {
@@ -46,10 +44,10 @@ public class ListRegistryIntroPage extends BaseTest {
 		driver.findElement(confirmListBtn).click();
 	}
 	
-	// assert list is created successfully
-	public void assertListCreatedSuccessfully() {
-		Assert.assertTrue(driver.getCurrentUrl()
-				.contains("https://www.amazon.com/hz/wishlist"), 
-				"Error: List was not created successfully");
-	}
+//	// assert list is created successfully
+//	public void assertListCreatedSuccessfully() {
+//		Assert.assertTrue(driver.getCurrentUrl()
+//				.contains("https://www.amazon.com/hz/wishlist"), 
+//				"Error: List was not created successfully");
+//	}
 }

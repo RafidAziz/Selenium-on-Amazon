@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (
 	features = "src/main/java/amazonSelenium",
-    plugin = {"pretty", "html:target/cucumber-reports.html"}
+    plugin = {"pretty", "html:target/run-all-cucumber-reports.html"}
 )
 public class RunAll extends AbstractTestNGCucumberTests {
 

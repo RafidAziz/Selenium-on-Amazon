@@ -10,6 +10,8 @@ public class ListRegistrySteps extends BaseTest {
 	
 	private String baseUrl = "https://www.amazon.com";
 	private String listRegistryIntroUrl = "https://www.amazon.com/hz/wishlist/intro";
+	private String yourListsUrl = "https://www.amazon.com/hz/wishlist/ls/ref=cm_wl_your_lists";
+	private String registriesUrl = "https://www.amazon.com/registries";
 	
 	@Given ("User is logged in with {string} and {string} for List and Registry module")
 	public void listRegistryLoginUser(String emailOrMobile, String password) {
@@ -47,7 +49,55 @@ public class ListRegistrySteps extends BaseTest {
 	
 	@Then ("User should see shopping list created successfully")
 	public void listCreatedSuccessfully() {
-		listRegistryIntroPage.assertListCreatedSuccessfully();
+//		listRegistryIntroPage.assertListCreatedSuccessfully();
+		Assert.assertTrue(driver.getCurrentUrl()
+				.contains("https://www.amazon.com/hz/wishlist"), 
+				"Error: List was not created successfully");
+	}
+	
+	// Scenario: Delete a list
+	@When ("User goes to 'Your Lists' page")
+	public void userGoToListsPage() {
+		navigateToURL(yourListsUrl);
+	}
+	
+	@And ("User clicks on 'Manage List' for the first list")
+	public void userClickManageList() {
+		yourListsPage.clickManageListLink();
+	}
+	
+	@And ("User clicks on delete list button")
+	public void userClickDeleteListBtn() {
+		yourListsPage.clickDeleteListBtn();
+		yourListsPage.clickDeleteListConfirmBtn();
+	}
+	
+	@Then ("User should see shopping list is deleted successfully")
+	public void listDeletedSuccessfully() {
+		Assert.assertTrue(driver.getCurrentUrl()
+				.contains("https://www.amazon.com/hz/wishlist"), 
+				"Error: List was deleted successfully");
+	}
+	
+	// Scenario: Verify registry categories links
+	@When ("User goes to registries page") 
+	public void userGoToRegistriesPage() {
+		navigateToURL(registriesUrl);
+	}
+	
+	@And ("User clicks on each category")
+	public void userClickEachCategory() {
+		registriesPage.clickMarriageImgLink();
+		registriesPage.clickBabyImgLink();
+		registriesPage.clickBirthdayImgLink();
+		registriesPage.clickOccasionImgLink();
+		registriesPage.clickGraduationImgLink();
+		registriesPage.clickPetImgLink();
+	}
+	
+	@Then ("User should see the category's page")
+	public void assertEachCategoryPage() {
+		registriesPage.assertCategoriesPages();
 	}
 	
 	@After

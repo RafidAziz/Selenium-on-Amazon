@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (
 	features = "src/main/java/amazonSelenium/login-functionality.feature",
-    plugin = {"pretty", "html:target/cucumber-reports.html"}
+    plugin = {"pretty", "html:target/run-login-cucumber-reports.html"}
 )
 public class RunLogin extends AbstractTestNGCucumberTests {
 
