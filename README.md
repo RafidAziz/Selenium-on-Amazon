@@ -37,10 +37,10 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Remove product from cart
 - Create shopping list
 - Delete shopping list
+- Verify registry categories links
 
 ## Backlog (Subject to Changes)
-- Verify registry categories links
+- Create wedding registry
 
 ## Current Task 
-- Verify registry categories links
-  - Stopped at execution
+- Create wedding registry
