@@ -44,4 +44,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Create wedding registry
-  - Stopped at step definition file > copying create wedding registry URL
+  - Stopped at step definition file > "@And ("User clicks second Continue button")"
+
