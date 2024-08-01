@@ -38,11 +38,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Create shopping list
 - Delete shopping list
 - Verify registry categories links
+- Create wedding registry
 
 ## Backlog (Subject to Changes)
-- Create wedding registry
+- Delete wedding registry
 
 ## Current Task 
-- Create wedding registry
-  - Stopped at test case execution and checking test report
+- Delete wedding registry
+  - Stopped at cucumuber feature file > 'delete wedding registry' steps
 
