@@ -17,6 +17,7 @@ public class BaseTest {
 	protected ListRegistryIntroPage listRegistryIntroPage;
 	protected YourListsPage yourListsPage;
 	protected RegistriesPage registriesPage;
+	protected CreateWeddingRegistryPage createWeddingRegistryPage;
 
     public void initializeDriverAndPages() {
         System.setProperty("webdriver.chrome.driver", 
@@ -31,6 +32,7 @@ public class BaseTest {
         listRegistryIntroPage = new ListRegistryIntroPage(driver);
         yourListsPage = new YourListsPage(driver);
         registriesPage = new RegistriesPage(driver);
+        createWeddingRegistryPage = new CreateWeddingRegistryPage(driver);
 //        driver.manage().window().maximize();
     }
 
@@ -52,6 +54,15 @@ public class BaseTest {
         }
     }
 
+    public void waitTwoSeconds() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
     public void closeDriver() {
         if (driver != null) {
             driver.quit();

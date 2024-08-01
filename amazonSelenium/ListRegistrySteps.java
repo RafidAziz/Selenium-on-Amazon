@@ -12,6 +12,8 @@ public class ListRegistrySteps extends BaseTest {
 	private String listRegistryIntroUrl = "https://www.amazon.com/hz/wishlist/intro";
 	private String yourListsUrl = "https://www.amazon.com/hz/wishlist/ls/ref=cm_wl_your_lists";
 	private String registriesUrl = "https://www.amazon.com/registries";
+	private String createWeddingRegistryUrl = "https://www.amazon.com/wedding/new-registry?ref_=gr-home-wedding-create1&associateId=&associateSubId=";
+	private String viewWeddingRegistryUrl = "https://www.amazon.com/wedding/organize-registry?ref_=AWR_subnav";
 	
 	@Given ("User is logged in with {string} and {string} for List and Registry module")
 	public void listRegistryLoginUser(String emailOrMobile, String password) {
@@ -98,6 +100,62 @@ public class ListRegistrySteps extends BaseTest {
 	@Then ("User should see the category's page")
 	public void assertEachCategoryPage() {
 		registriesPage.assertCategoriesPages();
+	}
+	
+	// 	Scenario: Create wedding registry
+	@When ("User goes to wedding registry page")
+	public void userGoToWeddingRegistryPage() {
+		navigateToURL(createWeddingRegistryUrl);
+	}
+	
+	@And ("User enters partner full name {string} and {string}")
+	public void userEnterPartnerFullName(String firstName, String lastName) {
+		createWeddingRegistryPage.enterPartnerFirstName(firstName);
+		createWeddingRegistryPage.enterPartnerLastName(lastName);
+	}
+	
+	@And ("User clicks first Continue button")
+	public void userClickFirstContinueButton() {
+		createWeddingRegistryPage.clickFirstContinueButton();
+	}
+	
+	@And ("User enters wedding date and guest count: {string} and {string}")
+	public void userEnterWeddingDateAndGuestCount(String weddingDate, String guestCount) {
+		createWeddingRegistryPage.enterWeddingDate(weddingDate);
+		createWeddingRegistryPage.enterGuestCount(guestCount);
+	}
+	
+	@And ("User clicks second Continue button")
+	public void userClickSecondContinueButton() {
+		createWeddingRegistryPage.clickSecondContinueButton();
+	}
+	
+	@And ("User selects address and tick all checkboxes")
+	public void userSelectAddressAndTickAllCheckboxes() {
+		createWeddingRegistryPage.clickAllowGiftsToBeCheckBox();
+		createWeddingRegistryPage.clickLetGiftGiversCheckBox();
+	}
+	
+	@And ("User clicks third Continue button")
+	public void userClickThirdContinueButton() {
+		createWeddingRegistryPage.clickThirdContinueButton();
+	}
+	
+	@And ("User ticks private checkbox")
+	public void userClickPrivateCheckbox() {
+		createWeddingRegistryPage.clickPrivateCheckBox();
+	}
+	
+	@And ("User clicks Create button")
+	public void userClickCreateButton() {
+		createWeddingRegistryPage.clickCreateButton();
+	}
+	
+	@Then ("User should see the created wedding registry")
+	public void userSeeCreatedWeddingRegistry() {
+		waitTwoSeconds();
+		navigateToURL(viewWeddingRegistryUrl);
+		createWeddingRegistryPage.assertCreatedWeddingRegistry();
 	}
 	
 	@After
