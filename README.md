@@ -45,5 +45,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Delete wedding registry
-  - Stopped at cucumber feature file > 'delete wedding registry' steps
-
+  - Stopped at step definition file > 'Then User should not see the wedding registry anymore' step
