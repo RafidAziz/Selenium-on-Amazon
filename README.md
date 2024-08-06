@@ -39,10 +39,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Delete shopping list
 - Verify registry categories links
 - Create wedding registry
+- Delete wedding registry
 
 ## Backlog (Subject to Changes)
-- Delete wedding registry
+- Change language
+- Change currency
 
 ## Current Task 
-- Delete wedding registry
-  - Stopped at execution and checking test report
+- Change language
+  - Stopped at creating language feature file
