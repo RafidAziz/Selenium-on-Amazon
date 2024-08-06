@@ -34,3 +34,8 @@ Feature: Lists & Registries Module
 		And User clicks Create button
 		Then User should see the created wedding registry
 		
+	Scenario: Delete wedding registry
+		When User goes to wedding registry settings
+		And User clicks on delete registry buttons
+		Then User should not see the wedding registry anymore
+		

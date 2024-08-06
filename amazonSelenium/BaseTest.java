@@ -1,6 +1,7 @@
 package amazonSelenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,6 +19,7 @@ public class BaseTest {
 	protected YourListsPage yourListsPage;
 	protected RegistriesPage registriesPage;
 	protected CreateWeddingRegistryPage createWeddingRegistryPage;
+	protected WeddingRegistrySettingsPage weddingRegistrySettingsPage;
 
     public void initializeDriverAndPages() {
         System.setProperty("webdriver.chrome.driver", 
@@ -33,6 +35,7 @@ public class BaseTest {
         yourListsPage = new YourListsPage(driver);
         registriesPage = new RegistriesPage(driver);
         createWeddingRegistryPage = new CreateWeddingRegistryPage(driver);
+        weddingRegistrySettingsPage = new WeddingRegistrySettingsPage(driver);
 //        driver.manage().window().maximize();
     }
 
@@ -61,6 +64,16 @@ public class BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    }
+    
+    public void scrollToBottomOfPage() {
+    	// Cast the driver to JavascriptExecutor
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        // Scroll to the bottom of the page
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+        
+        waitTwoSeconds();
     }
     
     public void closeDriver() {

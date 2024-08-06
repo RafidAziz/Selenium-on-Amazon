@@ -14,6 +14,7 @@ public class ListRegistrySteps extends BaseTest {
 	private String registriesUrl = "https://www.amazon.com/registries";
 	private String createWeddingRegistryUrl = "https://www.amazon.com/wedding/new-registry?ref_=gr-home-wedding-create1&associateId=&associateSubId=";
 	private String viewWeddingRegistryUrl = "https://www.amazon.com/wedding/organize-registry?ref_=AWR_subnav";
+	private String weddingRegistrySettingsUrl = "https://www.amazon.com/wedding/manage-settings?ref_=AWR_subnav";
 	
 	@Given ("User is logged in with {string} and {string} for List and Registry module")
 	public void listRegistryLoginUser(String emailOrMobile, String password) {
@@ -156,6 +157,26 @@ public class ListRegistrySteps extends BaseTest {
 		waitTwoSeconds();
 		navigateToURL(viewWeddingRegistryUrl);
 		createWeddingRegistryPage.assertCreatedWeddingRegistry();
+	}
+	
+	// Scenario: Delete wedding registry
+	@When ("User goes to wedding registry settings")
+	public void userGoToWeddingRegistrySettingsPage() {
+		navigateToURL(weddingRegistrySettingsUrl);
+	}
+	
+	@And ("User clicks on delete registry buttons")
+	public void userClickDeleteRegistryButtons() {
+		scrollToBottomOfPage();
+		weddingRegistrySettingsPage.clickDeleteRegistryButton();
+		waitTwoSeconds();
+		weddingRegistrySettingsPage.clickConfirmDeleteButton();
+		waitTwoSeconds();
+	}
+	
+	@Then ("User should not see the wedding registry anymore")
+	public void userDoesNotSeeDeletedWeddingRegistry() {
+		weddingRegistrySettingsPage.assertDeletedWeddingRegistry();
 	}
 	
 	@After
