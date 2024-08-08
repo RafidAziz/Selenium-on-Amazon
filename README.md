@@ -47,4 +47,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Change language
-  - Stopped at creating language feature file
+  - Stopped at coding customer preferences step definitions file > 'When user goes to the language settings page' step
