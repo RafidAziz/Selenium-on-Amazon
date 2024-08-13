@@ -47,4 +47,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Change language
-  - Stopped at language currency settings page object file > writing actions methods for each element
+  - Stopped at creating 'RunCustomerPreferences.java' runner class
