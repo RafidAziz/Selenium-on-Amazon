@@ -20,6 +20,7 @@ public class BaseTest {
 	protected RegistriesPage registriesPage;
 	protected CreateWeddingRegistryPage createWeddingRegistryPage;
 	protected WeddingRegistrySettingsPage weddingRegistrySettingsPage;
+	protected LanguageCurrencySettingsPage languageCurrencySettingsPage;
 
     public void initializeDriverAndPages() {
         System.setProperty("webdriver.chrome.driver", 
@@ -36,6 +37,7 @@ public class BaseTest {
         registriesPage = new RegistriesPage(driver);
         createWeddingRegistryPage = new CreateWeddingRegistryPage(driver);
         weddingRegistrySettingsPage = new WeddingRegistrySettingsPage(driver);
+        languageCurrencySettingsPage = new LanguageCurrencySettingsPage(driver);
 //        driver.manage().window().maximize();
     }
 
