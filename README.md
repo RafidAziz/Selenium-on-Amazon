@@ -40,11 +40,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify registry categories links
 - Create wedding registry
 - Delete wedding registry
+- Change language
 
 ## Backlog (Subject to Changes)
-- Change language
+
 - Change currency
 
 ## Current Task 
-- Change language
-  - Stopped at creating 'RunCustomerPreferences.java' runner class
+- Change currency
+  - Stopped at adding gherkins steps in feature file
