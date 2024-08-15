@@ -48,4 +48,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Change currency
-  - Stopped at adding gherkins steps in feature file
+  - Stopped at step definitions class > writing step definitions 
