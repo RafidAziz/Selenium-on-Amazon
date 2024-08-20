@@ -41,11 +41,11 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Create wedding registry
 - Delete wedding registry
 - Change language
+- Change currency
 
 ## Backlog (Subject to Changes)
-
-- Change currency
+- Cancel language and currency changes
 
 ## Current Task 
-- Change currency
-  - Stopped at executing and checking test report
+- Cancel language and currency changes
+  - Stopped at feature file > writing gherkin steps
