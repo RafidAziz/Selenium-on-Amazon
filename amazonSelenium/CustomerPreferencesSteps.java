@@ -52,6 +52,38 @@ public class CustomerPreferencesSteps extends BaseTest {
 	public void userChangeLangugeToEnglish() {
 		languageCurrencySettingsPage.selectEnglishLanguage();
 		languageCurrencySettingsPage.clickSaveChangesButton();
+		waitTwoSeconds();
+	}
+	
+	// Scenario: Change currency settings
+	@When ("User goes to the currency settings page")
+	public void userGoToCurrencySettingsPage() {
+		waitTwoSeconds();
+		navigateToURL(languageCurrencySettingsUrl);
+	}
+	
+	@And ("User selects another currency")
+	public void userSelectAnotherCurrency() {
+		waitTwoSeconds();
+		languageCurrencySettingsPage.clickCurrencyDropDown();
+		languageCurrencySettingsPage.clickCurrencyDropDownSgd();
+	}
+	
+	@And ("User sees currency is changed correctly")
+	public void userSeeCurrencyIsChanged() {
+		waitTwoSeconds();
+		navigateToURL(languageCurrencySettingsUrl);
+		waitTwoSeconds();
+		languageCurrencySettingsPage.assertCurrencyChangedToSgd();
+	}
+	
+	@Then ("User changes currency back to USD")
+	public void userChangeCurrencyToUsd() {
+		waitTwoSeconds();
+		languageCurrencySettingsPage.clickCurrencyDropDown();
+		languageCurrencySettingsPage.clickCurrencyDropDownUsd();
+		languageCurrencySettingsPage.clickSaveChangesButton();
+		waitTwoSeconds();
 	}
 	
 	@After

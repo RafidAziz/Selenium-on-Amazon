@@ -10,3 +10,10 @@ Feature: Customer Preferences Module
     And User clicks save changes button
     And User sees language is changed correctly
     Then User changes language back to english
+    
+  Scenario: Change currency settings
+  	When User goes to the currency settings page
+  	And User selects another currency
+  	And User clicks save changes button
+  	And User sees currency is changed correctly
+  	Then User changes currency back to USD  	
