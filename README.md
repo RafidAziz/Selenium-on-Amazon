@@ -49,5 +49,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
   - Stopped at writing gherkin steps in feature file
 
 ## Current Task 
-- Cancel language and currency changes
-  - Stopped at feature file > writing gherkin steps
+- Cancel currency changes
+  - Stopped at writing gherkin steps in feature file
