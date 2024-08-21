@@ -12,11 +12,12 @@ public class LanguageCurrencySettingsPage {
 	private String currencyCheckSgd = "SGD";
 	
 	private By translationHeading = By.cssSelector("#icp-language-translation-heading");
-	private By englishLangCheckbox = By.cssSelector("body > div:nth-child(1) > div:nth-child(29) > div:nth-child(1) > form:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > label:nth-child(1) > i:nth-child(2)");
-	private By spanishLangCheckbox = By.cssSelector("body > div:nth-child(1) > div:nth-child(29) > div:nth-child(1) > form:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > label:nth-child(1) > i:nth-child(2)");
+	private By englishRadioButton = By.cssSelector("body > div:nth-child(1) > div:nth-child(29) > div:nth-child(1) > form:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > label:nth-child(1) > i:nth-child(2)");
+	private By spanishRadioButton = By.cssSelector("body > div:nth-child(1) > div:nth-child(29) > div:nth-child(1) > form:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > label:nth-child(1) > i:nth-child(2)");
 	private By currencyDropDown = By.cssSelector(".a-dropdown-prompt");
 	private By currencyDropDownSgd = By.id("icp-currency-dropdown_24");
 	private By currencyDropDownUsd = By.id("icp-currency-dropdown_1");
+	private By cancelBtn = By.cssSelector("a[class='a-button-text']");
 	private By saveChangesBtn = By.cssSelector(".a-button-input");
 	
 	public LanguageCurrencySettingsPage(WebDriver driver) {
@@ -24,11 +25,11 @@ public class LanguageCurrencySettingsPage {
 	}
 	
 	public void selectSpanishLanguage() {
-		driver.findElement(spanishLangCheckbox).click();
+		driver.findElement(spanishRadioButton).click();
 	}
 	
 	public void selectEnglishLanguage() {
-		driver.findElement(englishLangCheckbox).click();
+		driver.findElement(englishRadioButton).click();
 	}
 	
 	public void clickCurrencyDropDown() {
@@ -43,6 +44,11 @@ public class LanguageCurrencySettingsPage {
 		driver.findElement(currencyDropDownUsd).click();
 	}
 	
+	public void clickCancelButton() {
+		driver.findElement(cancelBtn).click();
+
+	}
+	
 	public void clickSaveChangesButton() {
 		driver.findElement(saveChangesBtn).click();
 	}
@@ -55,5 +61,7 @@ public class LanguageCurrencySettingsPage {
 		Assert.assertTrue(driver.findElement(currencyDropDown).getText().contains(currencyCheckSgd), "Currency is not in SGD.");
 	}
 	
-	
+	public void assertRevertLanguageToEnglish() {
+		Assert.assertTrue(driver.findElement(By.cssSelector("input[value='en_US']")).isSelected(), "Language is not reverted back to English.");
+	}
 }

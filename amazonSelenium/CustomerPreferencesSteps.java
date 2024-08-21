@@ -86,6 +86,20 @@ public class CustomerPreferencesSteps extends BaseTest {
 		waitTwoSeconds();
 	}
 	
+	// Scenario: Cancel language changes
+    @And ("User clicks cancel button")
+    public void userClickCancelButton() {
+    	languageCurrencySettingsPage.clickCancelButton();
+    }
+    
+    @Then ("User should see english language selected")
+    public void userSeesEnglishLanguageSelected() {
+		waitTwoSeconds();
+		navigateToURL(languageCurrencySettingsUrl);
+		waitTwoSeconds();
+    	languageCurrencySettingsPage.assertRevertLanguageToEnglish();
+    }
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {

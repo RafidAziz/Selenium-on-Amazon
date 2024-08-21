@@ -17,3 +17,12 @@ Feature: Customer Preferences Module
   	And User clicks save changes button
   	And User sees currency is changed correctly
   	Then User changes currency back to USD  	
+  	
+	Scenario: Cancel language changes
+    When User goes to the language settings page
+    And User selects another language
+    And User clicks cancel button
+    Then User should see english language selected
+    
+ 
+    
