@@ -43,11 +43,10 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Change language
 - Change currency
 - Cancel language changes
+- Cancel currency changes
 
 ## Backlog (Subject to Changes)
-- Cancel currency changes
-  - Stopped at writing gherkin steps in feature file
+- 
 
 ## Current Task 
-- Cancel currency changes
-  - Stopped at writing gherkin steps in feature file
+- Execute all test cases
