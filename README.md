@@ -46,7 +46,8 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Cancel currency changes
 
 ## Backlog (Subject to Changes)
-- 
+- Rate product
+- Review product
 
 ## Current Task 
 - Execute all test cases
