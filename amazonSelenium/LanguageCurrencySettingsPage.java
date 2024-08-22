@@ -10,6 +10,7 @@ public class LanguageCurrencySettingsPage {
 	
 	private String spanishWordCheck = "Traducción";
 	private String currencyCheckSgd = "SGD";
+	private String currencyCheckUsd = "USD";
 	
 	private By translationHeading = By.cssSelector("#icp-language-translation-heading");
 	private By englishRadioButton = By.cssSelector("body > div:nth-child(1) > div:nth-child(29) > div:nth-child(1) > form:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > label:nth-child(1) > i:nth-child(2)");
@@ -63,5 +64,9 @@ public class LanguageCurrencySettingsPage {
 	
 	public void assertRevertLanguageToEnglish() {
 		Assert.assertTrue(driver.findElement(By.cssSelector("input[value='en_US']")).isSelected(), "Language is not reverted back to English.");
+	}
+	
+	public void assertRevertCurrencyToUsd() {
+		Assert.assertTrue(driver.findElement(currencyDropDown).getText().contains(currencyCheckUsd), "Currency is not in USD.");
 	}
 }

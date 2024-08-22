@@ -99,6 +99,15 @@ public class CustomerPreferencesSteps extends BaseTest {
 		waitTwoSeconds();
     	languageCurrencySettingsPage.assertRevertLanguageToEnglish();
     }
+    
+ 	// Scenario: Cancel currency changes
+    @Then ("User should see USD currency selected")
+    public void userSeesUsdCurrencySelected() {
+		waitTwoSeconds();
+		navigateToURL(languageCurrencySettingsUrl);
+		waitTwoSeconds();
+    	languageCurrencySettingsPage.assertRevertCurrencyToUsd();
+    }
 	
 	@After
 	public void tearDown() {
