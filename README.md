@@ -48,6 +48,9 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
+- Verify 'Buy Now' function
+- Change product quantity in cart page
 
 ## Current Task 
-- Execute all test cases
+- Change product quantity in product page
+  - Stopped at writing step definitions > 'User changes product quantity'
