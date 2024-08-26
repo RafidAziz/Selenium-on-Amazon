@@ -67,6 +67,17 @@ public class CartSteps extends BaseTest{
     	Assert.assertTrue(cartPage.getRemovedFromCartMsg()
     			.contains("removed from Shopping Cart"));
     }
+    
+    // Scenario: Change product quantity in cart
+	@And ("User changes product quantity in cart")
+	public void userChangeProductQuantity() {
+		cartPage.changeDropDownQuantityToFive();
+	}
+	
+	@Then ("User should see quantity is changed in cart")
+	public void useSeeChangedQuantity() {
+		cartPage.assertDropDownQuantityIsFive();
+	}
 	
 	@After
 	public void tearDown() {

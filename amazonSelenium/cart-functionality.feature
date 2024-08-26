@@ -8,7 +8,12 @@ Feature: Shopping Cart Module
     When User is in the product details page
     And User clicks on add to cart button
     Then User is redirected to 'added to cart' page
-
+   
+   Scenario Outline: Change product quantity in cart
+		When User is in the shopping cart page
+		And User changes product quantity in cart
+		Then User should see quantity is changed in cart
+		
    Scenario Outline: Remove product from cart
     When User is in the shopping cart page
     And User clicks on delete link

@@ -18,3 +18,10 @@ Feature: Search product
     Given User is on the amazon search results page
   	When User clicks on a product
   	Then User should be redirected to the product details page
+  	
+	Scenario: Change product quantity
+		When User is on the product details page
+		And User changes product quantity
+		Then User should see quantity is changed
+		
+	
