@@ -53,4 +53,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify 'Buy Now' function
-  - Stopped at gherkins steps in feature file
+  - Stopped at step definition for logging in user
