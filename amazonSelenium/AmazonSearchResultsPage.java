@@ -12,7 +12,7 @@ public class AmazonSearchResultsPage {
 	
     // Using @FindBy annotation to locate the element
     //@FindBy(xpath = "//span[contains(text(),'results for')]")
-    private By resultsForLabel = By.xpath("//span[contains(text(),'results for')]");
+    private By resultsForLabel = By.xpath("//span[contains(text(),'results')]");
     private By productDesc = By.cssSelector("span[class='a-size-medium a-color-base a-text-normal']");
 
     public AmazonSearchResultsPage(WebDriver driver) {

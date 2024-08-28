@@ -62,6 +62,7 @@ public class SearchSteps extends BaseTest{
 	// Scenario: Change product quantity
 	@When ("User is on the product details page")
 	public void userGoToProductDetailsPage() {
+		waitTwoSeconds();
 		navigateToURL(prodDetailsUrl);
 	}
 	
@@ -73,6 +74,28 @@ public class SearchSteps extends BaseTest{
 	@Then ("User should see quantity is changed")
 	public void userSeeQuantityChanged() {
 		prodDetailsPage.assertDropDownQuantityIsTwo();
+	}
+	
+	// Scenario: Verify Buy Now button
+	@When ("User logs in with {string} and {string}")
+    public void loginUser(String emailOrMobile, String password) {
+        navigateToHomePage(baseUrl);
+        homePage.clickSignInBtn();
+        signInPage.enterEmailOrMobile(emailOrMobile);
+        signInPage.clickContinueBtn();
+        signInPage.enterPassword(password);
+        signInPage.clickSignInBtn();
+    }
+	
+	@And ("User clicks on Buy Now button")
+	public void userClickBuyNowButton() {
+		waitTwoSeconds();
+		prodDetailsPage.clickBuyNowBtn();
+	}
+
+	@Then ("User should see the checkout page")
+	public void userSeeCheckoutPage() {
+		prodDetailsPage.assertBuyNow();
 	}
 	
 	@After

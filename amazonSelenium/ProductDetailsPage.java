@@ -10,11 +10,13 @@ import io.cucumber.java.en.*;
 public class ProductDetailsPage extends BaseTest {
 
 	private WebDriver driver;
+	private String checkoutPageUrl = "https://www.amazon.com/gp/buy/addressselect/handlers/display.html?_from=cheetah";
 	
 	private By addToCartBtn = By.id("add-to-cart-button");
 	private By addedtoCartMsg = By.cssSelector("h1[class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']");
 	private By quantityDropDown = By.id("a-autoid-0-announce");
 	private By quantity2DropDown = By.id("quantity_1");
+	private By buyNowBtn = By.id("buy-now-button");
 	
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
@@ -23,6 +25,10 @@ public class ProductDetailsPage extends BaseTest {
 	// click add to cart button
 	public void clickAddToCartBtn() {
 		driver.findElement(addToCartBtn).click();
+	}
+	
+	public void clickBuyNowBtn() {
+		driver.findElement(buyNowBtn).click();
 	}
 	
 	// get 'added to cart' text
@@ -39,5 +45,9 @@ public class ProductDetailsPage extends BaseTest {
 	
 	public void assertDropDownQuantityIsTwo() {
 		Assert.assertTrue(driver.findElement(quantityDropDown).getText().contains("2"), "Quantity is not changed to 2.");
+	}
+	
+	public void assertBuyNow() {
+		Assert.assertTrue(driver.getCurrentUrl().equals(checkoutPageUrl), "User is not in checkout page. Actual page: " + driver.getCurrentUrl());
 	}
 }
