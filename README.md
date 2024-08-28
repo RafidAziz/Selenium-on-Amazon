@@ -46,11 +46,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Cancel currency changes
 - Change product quantity in product page
 - Change product quantity in cart page
+- Verify 'Buy Now' function
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify 'Buy Now' function
-  - Stopped at step definition for logging in user
+- Verify product details > 'Sold By' link
+  - Stopped at writing gherkins steps in feature file
