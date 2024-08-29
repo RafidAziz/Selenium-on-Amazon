@@ -54,4 +54,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify product details > 'Sold By' link
-  - Stopped at writing gherkins steps in feature file
+  - Stopped at writing locators and action methods in page object class
