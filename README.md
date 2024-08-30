@@ -46,12 +46,13 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Cancel currency changes
 - Change product quantity in product page
 - Change product quantity in cart page
-- Verify 'Buy Now' function
+- Verify product details > 'Buy Now' function
+- Verify product details > 'Sold By' link > Seller name
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify product details > 'Sold By' link
-  - Stopped at writing locators and action methods in page object class
+- Verify seller details
+  - Stopped at writing gherkins steps in feature file
