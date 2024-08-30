@@ -11,12 +11,16 @@ public class ProductDetailsPage extends BaseTest {
 
 	private WebDriver driver;
 	private String checkoutPageUrl = "https://www.amazon.com/gp/buy/addressselect/handlers/display.html?_from=cheetah";
+	private String expectedSeller;
+	private String actualSeller;
 	
 	private By addToCartBtn = By.id("add-to-cart-button");
 	private By addedtoCartMsg = By.cssSelector("h1[class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']");
 	private By quantityDropDown = By.id("a-autoid-0-announce");
 	private By quantity2DropDown = By.id("quantity_1");
 	private By buyNowBtn = By.id("buy-now-button");
+	private By soldByLink = By.id("sellerProfileTriggerId");
+	private By sellerNameLabel = By.id("seller-name");
 	
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
@@ -29,6 +33,12 @@ public class ProductDetailsPage extends BaseTest {
 	
 	public void clickBuyNowBtn() {
 		driver.findElement(buyNowBtn).click();
+	}
+	
+	public void clickSoldByLink() {
+		expectedSeller = driver.findElement(soldByLink).getText();
+		driver.findElement(soldByLink).click();
+		
 	}
 	
 	// get 'added to cart' text
@@ -49,5 +59,10 @@ public class ProductDetailsPage extends BaseTest {
 	
 	public void assertBuyNow() {
 		Assert.assertTrue(driver.getCurrentUrl().equals(checkoutPageUrl), "User is not in checkout page. Actual page: " + driver.getCurrentUrl());
+	}
+	
+	public void assertSellerName() {
+		actualSeller = driver.findElement(sellerNameLabel).getText();
+		Assert.assertTrue(actualSeller.contains(expectedSeller), "Seller name does not match.");
 	}
 }

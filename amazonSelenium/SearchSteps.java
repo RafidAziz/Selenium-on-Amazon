@@ -98,6 +98,17 @@ public class SearchSteps extends BaseTest{
 		prodDetailsPage.assertBuyNow();
 	}
 	
+	// Scenario: Verify seller name
+	@And ("User clicks on Sold By link")
+	public void userClickSoldByLink() {
+		prodDetailsPage.clickSoldByLink();
+	}
+	
+	@Then ("User should see the seller name")
+	public void userSeeSellerName() {
+		prodDetailsPage.assertSellerName();
+	}
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {
