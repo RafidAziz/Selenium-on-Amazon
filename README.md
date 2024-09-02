@@ -54,5 +54,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Review product
 
 ## Current Task 
-- Verify seller details
-  - Stopped at writing gherkins steps in feature file
+- Verify returns popup
+  - Stopped at writing step definitions
