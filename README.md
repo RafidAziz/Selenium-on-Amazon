@@ -55,4 +55,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify returns popup
-  - Stopped at switching to new tab then get the current URL
+  - Stopped at debugging element not interactable error (occurs 2/5 times)
