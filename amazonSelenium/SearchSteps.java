@@ -109,6 +109,18 @@ public class SearchSteps extends BaseTest{
 		prodDetailsPage.assertSellerName();
 	}
 	
+	// Scenario: Verify returns popup
+	@And ("User clicks returns link")
+	public void userClickReturnsLink() {
+//		prodDetailsPage.clickRegularPriceRadioBtn();
+		prodDetailsPage.clickReturnsLink();
+	}
+	
+	@Then ("User should see popup of return policy")
+	public void userSeePopupReturnPolicy() {
+		prodDetailsPage.assertReturnsPolicy();
+	}
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {

@@ -78,6 +78,16 @@ public class BaseTest {
         waitTwoSeconds();
     }
     
+    public void switchToNewTab(WebDriver driver) {
+    	String originalWindow = driver.getWindowHandle();
+		for (String windowHandle : driver.getWindowHandles()) {
+		    if (!originalWindow.contentEquals(windowHandle)) {
+		        driver.switchTo().window(windowHandle);
+		        break;
+		    }
+		}
+    }
+    
     public void closeDriver() {
         if (driver != null) {
             driver.quit();

@@ -36,4 +36,7 @@ Feature: Search product
 		And User clicks on Sold By link
 		Then User should see the seller name
 		
-	
+	Scenario: Verify returns popup
+		When User is on the product details page
+		And User clicks returns link
+		Then User should see popup of return policy
