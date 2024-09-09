@@ -48,11 +48,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Change product quantity in cart page
 - Verify product details > 'Buy Now' function
 - Verify product details > 'Sold By' link > Seller name
+- Verify returns popup
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify returns popup
-  - Stopped at debugging element not interactable error (occurs 2/5 times)
+- Verify payment popup
+  - Stopped at writing gherkins steps in feature file
