@@ -56,4 +56,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify payment popup
-  - Stopped at writing gherkins steps in feature file
+  - Stopped at writing action methods in page object class
