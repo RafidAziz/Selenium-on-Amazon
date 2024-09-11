@@ -121,6 +121,17 @@ public class SearchSteps extends BaseTest{
 		prodDetailsPage.assertReturnsPolicy();
 	}
 	
+	// Scenario: Verify payment popup
+	@And ("User clicks payment link")
+	public void userClickPaymentLink() {
+		prodDetailsPage.clickPaymentLink();
+	}
+	
+	@Then ("User should see popup of payment policy")
+	public void userSeePopupPaymentPolicy() {
+		prodDetailsPage.assertPaymentLearnMoreLink();
+	}
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {

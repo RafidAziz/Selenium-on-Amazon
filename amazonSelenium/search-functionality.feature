@@ -40,3 +40,8 @@ Feature: Search product
 		When User is on the product details page
 		And User clicks returns link
 		Then User should see popup of return policy
+		
+	Scenario: Verify payment popup
+		When User is on the product details page
+		And User clicks payment link
+		Then User should see popup of payment policy
