@@ -57,4 +57,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify 'report an issue' function
-  - Stopped at writing step definitions
+  - Stopped at writing assertReportAnIssueDropDownOptions() method in page object class
