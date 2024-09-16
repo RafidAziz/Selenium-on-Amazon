@@ -50,11 +50,11 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify product details > 'Sold By' link > Seller name
 - Verify returns popup
 - Verify payment popup
+- Verify 'report an issue' function
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify 'report an issue' function
-  - Stopped at writing assertReportAnIssueDropDownOptions() method in page object class
+- Test case analysis
