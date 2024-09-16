@@ -45,3 +45,10 @@ Feature: Search product
 		When User is on the product details page
 		And User clicks payment link
 		Then User should see popup of payment policy
+		
+	Scenario: Verify report an issue function
+		When User logs in with 'rafidamazontest@gmail.com' and 'rafidamazontest'
+		And User is on the product details page
+		And User clicks report an issue link
+		Then User should see popup for reporting issues
+		

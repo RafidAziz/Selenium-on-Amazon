@@ -25,14 +25,37 @@ public class ProductDetailsPage extends BaseTest {
 	private By regularPriceRadioBtn = By.cssSelector("div[id='newAccordionRow_1'] i[class='a-icon a-accordion-radio a-icon-radio-inactive']");
 	private By soldByLink = By.id("sellerProfileTriggerId");
 	private By sellerNameLabel = By.id("seller-name");
+	
 	private By returnsLink = By.cssSelector("a[data-csa-c-content-id='odf-desktop-return-info'] span[class='a-size-small offer-display-feature-text-message']");
 	private By returnHeading = By.cssSelector("div[data-csa-c-content-id='desktop-return-info'] span[class='a-text-bold']");
 	private By returnDesc = By.cssSelector("div[id='a-popover-4'] div[class='a-section a-padding-base'] div:nth-child(1)");
 	private By fullReturnPolicyLink = By.xpath("//div[@class='a-section a-padding-base']//a[@id='desktop-return-info-link-text']");
+	
 	private By paymentLink = By.xpath("//span[@class='a-size-small offer-display-feature-text-message'][normalize-space()='Secure transaction']");
 	private By paymentHeading = By.xpath("//span[normalize-space()='Your transaction is secure']");
 	private By paymentLearnMoreLink = By.xpath("//div[contains(text(),'We work hard to protect your security and privacy.')]//span[contains(text(),'Learn more')]");
 	
+	private By reportIssueLink = By.cssSelector("._tell-amazon-desktop_style_tell_amazon_link__1KW5z");
+	private By reportAnIssueHeading = By.xpath("//h4[normalize-space()='Report an issue']");
+	private By chooseDropDown = By.cssSelector("span[class='a-button a-button-dropdown a-spacing-base a-button-span12'] span[class='a-button-text a-declarative']");
+	private By problemWithOrderOption = By.id("tellAmazon_firstLevelDropdown_0");
+	private String problemWithOrderText = "There’s a problem with my order";
+	private By prodInfoMissingOption = By.id("tellAmazon_firstLevelDropdown_1");
+	private String prodInfoMissingText = "Some product information is missing, inaccurate or could be improved";
+	private By partsMismatchOption = By.id("tellAmazon_firstLevelDropdown_2");
+	private String partsMismatchText = "Parts of this page don't match";
+	private By issueWithPriceOption = By.id("tellAmazon_firstLevelDropdown_3");
+	private String issueWithPriceText = "I have an issue with the price";
+	private By prodOffensiveOption = By.id("tellAmazon_firstLevelDropdown_4");
+	private String prodOffensiveText = "This product or content is offensive";
+	private By prodIllegalOption = By.id("tellAmazon_firstLevelDropdown_5");
+	private String prodIllegalText = "This product or content is illegal, unsafe or suspicious";
+	private By issueWithSellerOption = By.id("tellAmazon_firstLevelDropdown_6");
+	private String issueWithSellerText = "I have an issue with a Seller";
+	private By otherOption = By.id("tellAmazon_firstLevelDropdown_7");
+	private String otherText = "Other";
+	
+			
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
 	}  
@@ -72,6 +95,14 @@ public class ProductDetailsPage extends BaseTest {
 	
 	public void clickPaymentLearnMoreLink() {
 		driver.findElement(paymentLearnMoreLink).click();
+	}
+	
+	public void clickReportAnIssueLink() {
+		driver.findElement(reportIssueLink).click();
+	}
+	
+	public void clickReportAnIssueDropDown() {
+		driver.findElement(chooseDropDown).click();
 	}
 	
 	// get 'added to cart' text
@@ -115,6 +146,25 @@ public class ProductDetailsPage extends BaseTest {
 		switchToNewTab(driver);
 		waitTwoSeconds();
 		Assert.assertTrue(driver.getCurrentUrl().contains(privacyNoticeUrl), "Privacy notice URL is not correct: " + driver.getCurrentUrl());
+	}
+	
+	public void assertReportAnIssueDropDownOptions() {
+		Assert.assertEquals(driver.findElement(problemWithOrderOption).getText(), problemWithOrderText, "Option 1 mismatch.");
+		Assert.assertEquals(driver.findElement(prodInfoMissingOption).getText(), prodInfoMissingText, "Option 2 mismatch.");
+		Assert.assertEquals(driver.findElement(partsMismatchOption).getText(), partsMismatchText, "Option 3 mismatch.");
+		Assert.assertEquals(driver.findElement(issueWithPriceOption).getText(), issueWithPriceText, "Option 4 mismatch.");
+		Assert.assertEquals(driver.findElement(prodOffensiveOption).getText(), prodOffensiveText, "Option 5 mismatch.");
+		Assert.assertEquals(driver.findElement(prodIllegalOption).getText(), prodIllegalText, "Option 6 mismatch.");
+		Assert.assertEquals(driver.findElement(issueWithSellerOption).getText(), issueWithSellerText, "Option 7 mismatch.");
+		Assert.assertEquals(driver.findElement(otherOption).getText(), otherText, "Option 8 mismatch.");
+	}
+	
+	public void assertReportAnIssue() {
+		waitTwoSeconds();
+		Assert.assertTrue(driver.findElement(reportAnIssueHeading).isDisplayed(), "Report an issue heading is not displayed.");
+		Assert.assertTrue(driver.findElement(chooseDropDown).isDisplayed(), "Report an issue drop down is not displayed.");
+		clickReportAnIssueDropDown();
+		assertReportAnIssueDropDownOptions();
 	}
 	
 	public void retryClickingReturnPolicyLink() {

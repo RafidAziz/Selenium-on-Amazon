@@ -132,6 +132,17 @@ public class SearchSteps extends BaseTest{
 		prodDetailsPage.assertPaymentLearnMoreLink();
 	}
 	
+	// Scenario: Verify report an issue function
+	@And ("User clicks report an issue link")
+	public void userClickReportAnIssueLink() {
+		prodDetailsPage.clickReportAnIssueLink();
+	}
+	
+	@Then ("User should see popup for reporting issues")
+	public void userSeePopupForReportingIssues() {
+		prodDetailsPage.assertReportAnIssue();
+	}
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {
