@@ -58,4 +58,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify page sections in product details page
-  - Stopped at writing assertions in page object class
+  - Stopped at debugging TestNG assertion fails but Cucumber report shows pass
