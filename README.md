@@ -58,4 +58,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify page sections in product details page
-  - Stopped at adding assertAll() method call to each assert method
+  - Stopped at analyzing last four failed sections
