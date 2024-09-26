@@ -143,6 +143,105 @@ public class SearchSteps extends BaseTest{
 		prodDetailsPage.assertReportAnIssue();
 	}
 	
+	// Scenario: Verify page sections in product details page
+//	@Then ("User should see customers also bought section")
+//	public void userSeeCustomersAlsoBoughtSection() {
+//		prodDetailsPage.assertCustomersAlsoBoughtSection();
+//	}
+	
+	@Then ("User should see shop deals on related items")
+	public void userSeeShopDealsOnRelatedItemstSection() {
+	    prodDetailsPage.assertShopDealsOnRelatedItemsHeading();
+	}
+
+	@Then ("User should see frequently purchased items with fast delivery section")
+	public void userSeeFrequentlyPurchasedItemsSection() {
+	    prodDetailsPage.assertFrequentlyPurchasedItemsSectionHeading();
+	}
+
+	@Then ("User should see from the brand section")
+	public void userSeeFromTheBrandSection() {
+	    prodDetailsPage.assertFromTheBrandSectionHeading();
+	}
+
+	@Then ("User should see product description section")
+	public void userSeeProductDescriptionSection() {
+	    prodDetailsPage.assertProductDescriptionSectionHeading();
+	}
+
+	@Then ("User should see looking for specific info section")
+	public void userSeeLookingForSpecificInfoSection() {
+	    prodDetailsPage.assertLookingForSpecificInfoSectionHeading();
+	}
+
+	@Then ("User should see product information section")
+	public void userSeeProductInfoSection() {
+	    prodDetailsPage.assertProductInformationSectionHeading();
+	}
+
+	@Then ("User should see videos section")
+	public void userSeeVideosSection() {
+	    prodDetailsPage.assertVideosSectionHeading();
+	}
+
+	@Then ("User should see product guides and documents section")
+	public void userSeeProductGuidesAndDocsSection() {
+	    prodDetailsPage.assertProductGuidesAndDocumentsSectionHeading();
+	}
+
+	@Then ("User should see compare with similar items section")
+	public void userShouldSeeCompareWithSimilarItemsSection() {
+	    prodDetailsPage.assertCompareWithSimilarItemsSectionHeading();
+	}
+
+	@Then ("User should see inspiration from this brand section")
+	public void userShouldSeeInspirationFromThisBrandSection() {
+	    prodDetailsPage.assertInspirationFromThisBrandSectionHeading();
+	}
+
+	@Then ("User should see important information section")
+	public void userShouldSeeImportantInformationSection() {
+	    prodDetailsPage.assertImportantInformationSectionHeading();
+	}
+
+	@Then ("User should see products related to this item section")
+	public void userShouldSeeProductsRelatedToThisItemSection() {
+	    prodDetailsPage.assertProductsRelatedToThisItemSectionHeading();
+	}
+
+	@Then ("User should see similar brands on amazon section")
+	public void userShouldSeeSimilarBrandsOnAmazonSection() {
+	    prodDetailsPage.assertSimilarBrandsOnAmazonSectionHeading();
+	}
+
+	@Then ("User should see customer reviews section")
+	public void userShouldSeeCustomerReviewsSection() {
+	    prodDetailsPage.assertCustomerReviewsSectionHeading();
+	}
+
+	@Then ("User should see customers who bought this item also bought section")
+	public void userShouldSeeCustomersWhoBoughtThisItemAlsoBoughtSection() {
+	    prodDetailsPage.assertCustomersWhoBoughtThisItemAlsoBoughtSectionHeading();
+	}
+
+	@Then ("User should see best sellers in kitchen and dining section")
+	public void userShouldSeeBestSellersInKitchenAndDiningSection() {
+	    prodDetailsPage.assertBestSellersInKitchenAndDiningSectionHeading();
+	}
+
+	@Then ("User should see customers who viewed items in your browsing history also viewed section")
+	public void userShouldSeeCustomersWhoViewedItemsInYourBrowsingHistoryAlsoViewedSection() {
+	    prodDetailsPage.assertCustomersWhoViewedItemsInYourBrowsingHistoryAlsoViewedSectionHeading();
+	}
+	
+	@Then ("User should see your browsing history section")
+	public void userShouldSeeYourBrowsingHistorySection() {
+		scrollToBottomOfPage();
+		prodDetailsPage.assertYourBrowsingHistorySectionHeading();
+	}
+
+
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {

@@ -52,3 +52,30 @@ Feature: Search product
 		And User clicks report an issue link
 		Then User should see popup for reporting issues
 		
+	Scenario: Verify page sections in product details page
+		When User logs in with 'rafidamazontest@gmail.com' and 'rafidamazontest'
+		And User is on the product details page
+#		Then User should see customers also bought section
+#		Then User should see shop deals on related items
+#		Then User should see frequently purchased items with fast delivery section
+		Then User should see from the brand section
+		Then User should see product description section
+		Then User should see looking for specific info section
+		Then User should see product information section
+		Then User should see videos section
+		Then User should see product guides and documents section
+		Then User should see compare with similar items section
+#		Then User should see inspiration from this brand section
+		Then User should see important information section
+#		Then User should see products related to this item section
+#		Then User should see similar brands on amazon section
+		Then User should see customer reviews section
+#		Then User should see customers who bought this item also bought section
+#		Then User should see best sellers in kitchen and dining section
+#		Then User should see customers who viewed items in your browsing history also viewed section
+		Then User should see your browsing history section
+		
+		
+		
+	
+		

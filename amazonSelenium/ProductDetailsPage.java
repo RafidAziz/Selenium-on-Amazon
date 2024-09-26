@@ -3,7 +3,9 @@ package amazonSelenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import io.cucumber.java.*;
 import io.cucumber.java.en.*;
@@ -11,6 +13,7 @@ import io.cucumber.java.en.*;
 public class ProductDetailsPage extends BaseTest {
 
 	private WebDriver driver;
+	SoftAssert softAssert = new SoftAssert();
 	private String checkoutPageUrl = "https://www.amazon.com/gp/buy/addressselect/handlers/display.html?_from=cheetah";
 	private String expectedSeller;
 	private String actualSeller;
@@ -55,7 +58,28 @@ public class ProductDetailsPage extends BaseTest {
 	private By otherOption = By.id("tellAmazon_firstLevelDropdown_7");
 	private String otherText = "Other";
 	
-			
+	// Sections locators
+	// come back
+	private By customersAlsoBoughtSectionHeading = By.cssSelector("div#customers_also_bought");
+	private By shopDealsOnRelatedItemsHeading = By.cssSelector("div[id='CardInstanceBJ5AuiQJ9nOeypc5ZAAfiw'] div[class='a-section a-spacing-large bucket'] div h2[class='a-carousel-heading a-inline-block']");
+	private By frequentlyPurchasedItemsSectionHeading = By.cssSelector("div[id='CardInstancew_KP2n-bVleZyWv5h8nUUg'] div[class='a-section a-spacing-large bucket'] div h2[class='a-carousel-heading a-inline-block']");
+	private By fromTheBrandSectionHeading = By.cssSelector("div[id='aplusBrandStory_feature_div'] h2");
+	private By productDescriptionSectionHeading = By.cssSelector("div[id='aplus_feature_div'] h2");
+	private By lookingForSpecificInfoSectionHeading = By.cssSelector("h3[class='a-color-base']");
+	private By productInformationSectionHeading = By.cssSelector("body div[id='a-page'] div[id='dp'] div[id='dp-container'] div[id='Desktop-Detailed-Evaluation-Zone'] div[id='productDetails_feature_div'] div div[id='prodDetails'] h2:nth-child(1)");
+	private By videosSectionHeading = By.xpath("//h2[normalize-space()='Videos']");
+	private By productGuidesAndDocumentsSectionHeading = By.xpath("//h2[normalize-space()='Product guides and documents']");
+	private By compareWithSimilarItemsSectionHeading = By.xpath("//h2[normalize-space()='Compare with similar items']");
+	private By inspirationFromThisBrandSectionHeading = By.xpath("//h2[normalize-space()='Inspiration from this brand']");
+	private By importantInformationSectionHeading = By.xpath("//h2[normalize-space()='Important information']");
+	private By productsRelatedToThisItemSectionHeading = By.xpath("//h2[normalize-space()='Products related to this item']");
+	private By similarBrandsOnAmazonSectionHeading = By.xpath("//h2[normalize-space()='Similar brands on Amazon']");
+	private By customerReviewsSectionHeading = By.xpath("//h2[normalize-space()='Customer reviews']");
+	private By customersWhoBoughtThisItemAlsoBoughtSectionHeading = By.xpath("//h2[normalize-space()='Customers who bought this item also bought']");
+	private By bestSellersInKitchenAndDiningSectionHeading = By.xpath("//h2[normalize-space()='Best Sellers in Kitchen & Dining']");
+	private By customersWhoViewedItemsInYourBrowsingHistoryAlsoViewedSectionHeading = By.xpath("//h2[contains(text(),'Customers who viewed items in your browsing histor')]");
+	private By yourBrowsingHistorySectionHeading = By.xpath("//h2[normalize-space()='Your Browsing History']");
+
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
 	}  
@@ -193,5 +217,187 @@ public class ProductDetailsPage extends BaseTest {
 	            waitTwoSeconds();
 			}
 		}
+	}
+	
+	public void assertShopDealsOnRelatedItemsHeading() {
+	    try {
+	        WebElement element = driver.findElement(shopDealsOnRelatedItemsHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Shop Deals on Related Items heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Shop Deals on Related Items heading assertion failed");
+	    }
+	}
+
+	public void assertFrequentlyPurchasedItemsSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(frequentlyPurchasedItemsSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Frequently Purchased Items section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Frequently Purchased Items section heading assertion failed");
+	    }
+	}
+
+	public void assertFromTheBrandSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(fromTheBrandSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "From the Brand section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("From the Brand section heading assertion failed");
+	    }
+	}
+
+	public void assertProductDescriptionSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(productDescriptionSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Product Description section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Product Description section heading assertion failed");
+	    }
+	}
+
+	public void assertLookingForSpecificInfoSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(lookingForSpecificInfoSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Looking for Specific Info section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Looking for Specific Info section heading assertion failed");
+	    }
+	}
+
+	public void assertProductInformationSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(productInformationSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Product Information section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Product Information section heading assertion failed");
+	    }
+	}
+
+	public void assertVideosSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(videosSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Videos section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Videos section heading assertion failed");
+	    }
+	}
+
+	public void assertProductGuidesAndDocumentsSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(productGuidesAndDocumentsSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Product Guides and Documents section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Product Guides and Documents section heading assertion failed");
+	    }
+	}
+
+	public void assertCompareWithSimilarItemsSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(compareWithSimilarItemsSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Compare with Similar Items section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Compare with Similar Items section heading assertion failed");
+	    }
+	}
+
+	public void assertInspirationFromThisBrandSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(inspirationFromThisBrandSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Inspiration from this Brand section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Inspiration from this Brand section heading assertion failed");
+	    }
+	}
+
+	public void assertImportantInformationSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(importantInformationSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Important Information section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Important Information section heading assertion failed");
+	    }
+	}
+	
+	public void assertProductsRelatedToThisItemSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(productsRelatedToThisItemSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Products Related to this Item section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Products Related to this Item section heading assertion failed");
+	    }
+	}
+
+	public void assertSimilarBrandsOnAmazonSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(similarBrandsOnAmazonSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Similar Brands on Amazon section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Similar Brands on Amazon section heading assertion failed");
+	    }
+	}
+
+	public void assertCustomerReviewsSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(customerReviewsSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Customer Reviews section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Customer Reviews section heading assertion failed");
+	    }
+	}
+
+	public void assertCustomersWhoBoughtThisItemAlsoBoughtSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(customersWhoBoughtThisItemAlsoBoughtSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Customers who bought this item also bought section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Customers who bought this item also bought section heading assertion failed");
+	    }
+	}
+
+	public void assertBestSellersInKitchenAndDiningSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(bestSellersInKitchenAndDiningSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Best Sellers in Kitchen and Dining section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Best Sellers in Kitchen and Dining section heading assertion failed");
+	    }
+	}
+
+	public void assertCustomersWhoViewedItemsInYourBrowsingHistoryAlsoViewedSectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(customersWhoViewedItemsInYourBrowsingHistoryAlsoViewedSectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Customers who viewed items in your browsing history also viewed section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Customers who viewed items in your browsing history also viewed section heading assertion failed");
+	    }
+	}
+
+	public void assertYourBrowsingHistorySectionHeading() {
+	    try {
+	        WebElement element = driver.findElement(yourBrowsingHistorySectionHeading);
+	        softAssert.assertTrue(element.isDisplayed(), "Your Browsing History section heading is not displayed");
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        softAssert.fail("Your Browsing History section heading assertion failed");
+	    } finally {
+	    	softAssert.assertAll("Important note: This test case is expected to fail as sections are dynamic."); // This ensures that any soft assertion failures are reported in Cucumber	
+	    }
 	}
 }
