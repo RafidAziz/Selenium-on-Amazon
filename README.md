@@ -51,11 +51,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify returns popup
 - Verify payment popup
 - Verify 'report an issue' function
+- Verify page sections in product details page
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify page sections in product details page
-  - Stopped at analyzing last four failed sections
+- Verify navigation header in product details page
+  - Stopped at writing gherkins steps in feature file
