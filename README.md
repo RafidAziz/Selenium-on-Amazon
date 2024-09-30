@@ -52,11 +52,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify payment popup
 - Verify 'report an issue' function
 - Verify page sections in product details page
+- Verify navigation header in product details page
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify navigation header in product details page
-  - Stopped at writing step definitions
+- Verify navigation footer headings and links in product details page
+  - Stopped at cucumber gherkins steps in feature file
