@@ -55,9 +55,6 @@ Feature: Search product
 	Scenario: Verify page sections in product details page
 		When User logs in with 'rafidamazontest@gmail.com' and 'rafidamazontest'
 		And User is on the product details page
-#		Then User should see customers also bought section
-#		Then User should see shop deals on related items
-#		Then User should see frequently purchased items with fast delivery section
 		Then User should see from the brand section
 		Then User should see product description section
 		Then User should see looking for specific info section
@@ -65,15 +62,20 @@ Feature: Search product
 		Then User should see videos section
 		Then User should see product guides and documents section
 		Then User should see compare with similar items section
-#		Then User should see inspiration from this brand section
 		Then User should see important information section
-#		Then User should see products related to this item section
-#		Then User should see similar brands on amazon section
 		Then User should see customer reviews section
-#		Then User should see customers who bought this item also bought section
-#		Then User should see best sellers in kitchen and dining section
-#		Then User should see customers who viewed items in your browsing history also viewed section
 		Then User should see your browsing history section
+		
+	Scenario: Verify navigation header in product details page
+		When User is on the product details page
+		And User scrolls down
+		Then User should see navigation header appear on the top
+		Then User should see top link
+		Then User should see about this item link
+		Then User should see similar link
+		Then User should see questions link
+		Then User should see product information link
+		Then User should see reviews link
 		
 		
 		

@@ -59,7 +59,6 @@ public class ProductDetailsPage extends BaseTest {
 	private String otherText = "Other";
 	
 	// Sections locators
-	// come back
 	private By customersAlsoBoughtSectionHeading = By.cssSelector("div#customers_also_bought");
 	private By shopDealsOnRelatedItemsHeading = By.cssSelector("div[id='CardInstanceBJ5AuiQJ9nOeypc5ZAAfiw'] div[class='a-section a-spacing-large bucket'] div h2[class='a-carousel-heading a-inline-block']");
 	private By frequentlyPurchasedItemsSectionHeading = By.cssSelector("div[id='CardInstancew_KP2n-bVleZyWv5h8nUUg'] div[class='a-section a-spacing-large bucket'] div h2[class='a-carousel-heading a-inline-block']");
@@ -80,6 +79,15 @@ public class ProductDetailsPage extends BaseTest {
 	private By customersWhoViewedItemsInYourBrowsingHistoryAlsoViewedSectionHeading = By.xpath("//h2[contains(text(),'Customers who viewed items in your browsing histor')]");
 	private By yourBrowsingHistorySectionHeading = By.xpath("//h2[normalize-space()='Your Browsing History']");
 
+	// Top navigation header locators (appears when user scrolls down page)
+	private By navigationHeader = By.id("btf-sub-nav-desktop-tabs");
+	private By topLink = By.xpath("//div[@class='top-tab-content']//div[1]");
+	private By aboutThisItemLink = By.xpath("//span[normalize-space()='About this item']");
+	private By similarLink = By.xpath("//span[normalize-space()='Similar']");
+	private By questionsLink = By.xpath("//span[normalize-space()='Questions']");
+	private By productInfoLink = By.xpath("//span[normalize-space()='Product information']");
+	private By reviewsLink = By.xpath("//span[normalize-space()='Reviews']");
+	
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
 	}  
@@ -399,5 +407,48 @@ public class ProductDetailsPage extends BaseTest {
 	    } finally {
 	    	softAssert.assertAll("Important note: This test case is expected to fail as sections are dynamic."); // This ensures that any soft assertion failures are reported in Cucumber	
 	    }
+	}
+	
+	// Assertions for Top navigation header locators (appears when user scrolls down page)
+	// Assertion for navigation header
+	public void assertNavigationHeaderDisplayed() {
+	    WebElement element = driver.findElement(navigationHeader);
+	    Assert.assertTrue(element.isDisplayed(), "Navigation header is not displayed");
+	}
+
+	// Assertion for top link
+	public void assertTopLinkDisplayed() {
+	    WebElement element = driver.findElement(topLink);
+	    Assert.assertTrue(element.isDisplayed(), "Top link is not displayed");
+	}
+
+	// Assertion for 'About this item' link
+	public void assertAboutThisItemLinkDisplayed() {
+	    WebElement element = driver.findElement(aboutThisItemLink);
+	    Assert.assertTrue(element.isDisplayed(), "'About this item' link is not displayed");
+	}
+
+	// Assertion for 'Similar' link
+	public void assertSimilarLinkDisplayed() {
+	    WebElement element = driver.findElement(similarLink);
+	    Assert.assertTrue(element.isDisplayed(), "'Similar' link is not displayed");
+	}
+
+	// Assertion for 'Questions' link
+	public void assertQuestionsLinkDisplayed() {
+	    WebElement element = driver.findElement(questionsLink);
+	    Assert.assertTrue(element.isDisplayed(), "'Questions' link is not displayed");
+	}
+
+	// Assertion for 'Product information' link
+	public void assertProductInfoLinkDisplayed() {
+	    WebElement element = driver.findElement(productInfoLink);
+	    Assert.assertTrue(element.isDisplayed(), "'Product information' link is not displayed");
+	}
+
+	// Assertion for 'Reviews' link
+	public void assertReviewsLinkDisplayed() {
+	    WebElement element = driver.findElement(reviewsLink);
+	    Assert.assertTrue(element.isDisplayed(), "'Reviews' link is not displayed");
 	}
 }

@@ -61,7 +61,7 @@ public class SearchSteps extends BaseTest{
     
 	// Scenario: Change product quantity
 	@When ("User is on the product details page")
-	public void userGoToProductDetailsPage() {
+	public void userGoToprodDetailsPage() {
 		waitTwoSeconds();
 		navigateToURL(prodDetailsUrl);
 	}
@@ -240,7 +240,54 @@ public class SearchSteps extends BaseTest{
 		prodDetailsPage.assertYourBrowsingHistorySectionHeading();
 	}
 
+	// 	Scenario: Verify navigation header in product details page
+	// Step definition for scrolling down the page
+	@When("User scrolls down")
+	public void userScrollsDown() {
+	    scrollToBottomOfPage();
+	}
 
+	// Step definition for verifying navigation header visibility
+	@Then("User should see navigation header appear on the top")
+	public void userShouldSeeNavigationHeader() {
+	    prodDetailsPage.assertNavigationHeaderDisplayed();
+	}
+
+	// Step definition for verifying top link visibility
+	@Then("User should see top link")
+	public void userShouldSeeTopLink() {
+	    prodDetailsPage.assertTopLinkDisplayed();
+	}
+
+	// Step definition for verifying 'About this item' link visibility
+	@Then("User should see about this item link")
+	public void userShouldSeeAboutThisItemLink() {
+	    prodDetailsPage.assertAboutThisItemLinkDisplayed();
+	}
+
+	// Step definition for verifying 'Similar' link visibility
+	@Then("User should see similar link")
+	public void userShouldSeeSimilarLink() {
+	    prodDetailsPage.assertSimilarLinkDisplayed();
+	}
+
+	// Step definition for verifying 'Questions' link visibility
+	@Then("User should see questions link")
+	public void userShouldSeeQuestionsLink() {
+	    prodDetailsPage.assertQuestionsLinkDisplayed();
+	}
+
+	// Step definition for verifying 'Product information' link visibility
+	@Then("User should see product information link")
+	public void userShouldSeeProductInfoLink() {
+	    prodDetailsPage.assertProductInfoLinkDisplayed();
+	}
+
+	// Step definition for verifying 'Reviews' link visibility
+	@Then("User should see reviews link")
+	public void userShouldSeeReviewsLink() {
+	    prodDetailsPage.assertReviewsLinkDisplayed();
+	}
 	
 	@After
 	public void tearDown() {
