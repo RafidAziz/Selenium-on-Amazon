@@ -60,4 +60,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify navigation footer headings and links in product details page
-  - Stopped at writing step definitions
+  - Stopped at execution and results analysis
