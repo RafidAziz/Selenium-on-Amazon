@@ -53,11 +53,12 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify 'report an issue' function
 - Verify page sections in product details page
 - Verify navigation header in product details page
+- Verify navigation footer headings and links in product details page
 
 ## Backlog (Subject to Changes)
 - Rate product
 - Review product
 
 ## Current Task 
-- Verify navigation footer headings and links in product details page
-  - Stopped at execution and results analysis
+- Test case analysis
+  - Analyze next test case to automate
