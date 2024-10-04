@@ -77,7 +77,11 @@ Feature: Search product
 		Then User should see product information link
 		Then User should see reviews link
 		
-		
-		
+	Scenario: Verify navigation footer headings and links in product details page
+		When User is on the product details page
+		And User scrolls down
+		Then User should see get to know us heading and links
+		Then User should see make money with us heading and links
+		Then User should see amazon payment products heading and links
+		Then User should see let us help you heading and links
 	
-		

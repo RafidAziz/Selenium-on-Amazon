@@ -1,5 +1,6 @@
 package amazonSelenium;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -287,6 +288,53 @@ public class SearchSteps extends BaseTest{
 	@Then("User should see reviews link")
 	public void userShouldSeeReviewsLink() {
 	    prodDetailsPage.assertReviewsLinkDisplayed();
+	}
+	
+	// 	Scenario: Verify navigation footer headings and links in product details page
+	@Then ("User should see get to know us heading and links")
+	public void userShouldSeeGetToKnowUsHeadingAndLinks() {		
+		prodDetailsPage.assertGetToKnowUsHeadingIsDisplayed();
+		prodDetailsPage.assertCareersLinkIsDisplayed();
+		prodDetailsPage.assertBlogLinkIsDisplayed();
+		prodDetailsPage.assertAboutAmazonLinkIsDisplayed();
+		prodDetailsPage.assertInvestorRelationsLinkIsDisplayed();
+		prodDetailsPage.assertAmazonDevicesLinkIsDisplayed();
+		prodDetailsPage.assertAmazonScienceLinkIsDisplayed();
+	}
+	
+	@Then ("User should see make money with us heading and links")
+	public void userShouldSeeMakeMoneyWithUsHeadingAndLinks() {
+	    prodDetailsPage.assertMakeMoneyWithUsHeadingIsDisplayed();
+	    prodDetailsPage.assertSellProductsLinkIsDisplayed();
+	    prodDetailsPage.assertSellOnBusinessLinkIsDisplayed();
+	    prodDetailsPage.assertSellAppsLinkIsDisplayed();
+	    prodDetailsPage.assertBecomeAffiliateLinkIsDisplayed();
+	    prodDetailsPage.assertAdvertiseProductsLinkIsDisplayed();
+	    prodDetailsPage.assertSelfPublishLinkIsDisplayed();
+	    prodDetailsPage.assertHostHubLinkIsDisplayed();
+	    prodDetailsPage.assertSeeMoreLinkIsDisplayed();
+	}
+	
+	
+	@Then ("User should see amazon payment products heading and links")
+	public void userShouldSeeAmazonPaymentProductsHeadingAndLinks() {
+	    prodDetailsPage.assertAmazonPaymentProductsHeadingIsDisplayed();
+	    prodDetailsPage.assertAmazonBusinessCardLinkIsDisplayed();
+	    prodDetailsPage.assertShopWithPointsLinkIsDisplayed();
+	    prodDetailsPage.assertReloadYourBalanceLinkIsDisplayed();
+	    prodDetailsPage.assertAmazonCurrencyConverterLinkIsDisplayed();
+	}
+	
+	@Then("User should see let us help you heading and links")
+	public void userShouldSeeLetUsHelpYouHeadingAndLinks() {
+	    prodDetailsPage.assertLetUsHelpYouHeadingIsDisplayed();
+	    prodDetailsPage.assertAmazonCovidLinkIsDisplayed();
+	    prodDetailsPage.assertYourAccountLinkIsDisplayed();
+	    prodDetailsPage.assertYourOrdersLinkIsDisplayed();
+	    prodDetailsPage.assertShippingRatesPoliciesLinkIsDisplayed();
+	    prodDetailsPage.assertReturnsReplacementsLinkIsDisplayed();
+	    prodDetailsPage.assertManageContentDevicesLinkIsDisplayed();
+	    prodDetailsPage.assertHelpLinkIsDisplayed();
 	}
 	
 	@After

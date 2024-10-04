@@ -88,6 +88,45 @@ public class ProductDetailsPage extends BaseTest {
 	private By productInfoLink = By.xpath("//span[normalize-space()='Product information']");
 	private By reviewsLink = By.xpath("//span[normalize-space()='Reviews']");
 	
+	// Footer navigation headings and links
+		// Get To Know Us section
+	private By getToKnowUsHeading = By.xpath("//div[normalize-space()='Get to Know Us']");
+	private By careersLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Careers']");
+	private By blogLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Blog']");
+	private By aboutAmazonLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='About Amazon']");
+	private By investorRelationsLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Investor Relations']");
+	private By amazonDevicesLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Amazon Devices']");
+	private By amazonScienceLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Amazon Science']");
+
+		// Make Money with Us section
+	private By makeMoneyWithUsHeading = By.xpath("//div[normalize-space()='Make Money with Us']");
+	private By sellProductsLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Sell products on Amazon']");
+	private By sellOnBusinessLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Sell on Amazon Business']");
+	private By sellAppsLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Sell apps on Amazon']");
+	private By becomeAffiliateLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Become an Affiliate']");
+	private By advertiseProductsLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Advertise Your Products']");
+	private By selfPublishLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Self-Publish with Us']");
+	private By hostHubLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[normalize-space()='Host an Amazon Hub']");
+	private By seeMoreLink = By.xpath("//div[@role='heading' and text()='Make Money with Us']/following-sibling::ul/li/a[contains(text(), 'See More Make Money with Us')]");
+	
+		// Amazon Payment Products section
+	private By amazonPaymentProductsHeading = By.xpath("//div[normalize-space()='Amazon Payment Products']");
+	private By amazonBusinessCardLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Amazon Business Card']");
+	private By shopWithPointsLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Shop with Points']");
+	private By reloadYourBalanceLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Reload Your Balance']");
+	private By amazonCurrencyConverterLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Amazon Currency Converter']");
+
+		// Let Us Help You section
+	private By letUsHelpYouHeading = By.xpath("//div[normalize-space()='Let Us Help You']");
+	private By amazonCovidLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Amazon and COVID-19']");
+	private By yourAccountLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Your Account']");
+	private By yourOrdersLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Your Orders']");
+	private By shippingRatesPoliciesLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Shipping Rates & Policies']");
+	private By returnsReplacementsLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Returns & Replacements']");
+	private By manageContentDevicesLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Manage Your Content and Devices']");
+	private By helpLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Help']");
+
+	
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
 	}  
@@ -451,4 +490,122 @@ public class ProductDetailsPage extends BaseTest {
 	    WebElement element = driver.findElement(reviewsLink);
 	    Assert.assertTrue(element.isDisplayed(), "'Reviews' link is not displayed");
 	}
+	
+	// Assertions for footer navigation sections
+	public void assertGetToKnowUsHeadingIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(getToKnowUsHeading).isDisplayed(), "Get To Know Us heading is not displayed.");
+	}
+
+	public void assertCareersLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(careersLink).isDisplayed(), "Careers link is not displayed.");
+	}
+
+	public void assertBlogLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(blogLink).isDisplayed(), "Blog link is not displayed.");
+	}
+
+	public void assertAboutAmazonLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(aboutAmazonLink).isDisplayed(), "About Amazon link is not displayed.");
+	}
+
+	public void assertInvestorRelationsLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(investorRelationsLink).isDisplayed(), "Investor Relations link is not displayed.");
+	}
+
+	public void assertAmazonDevicesLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(amazonDevicesLink).isDisplayed(), "Amazon Devices link is not displayed.");
+	}
+
+	public void assertAmazonScienceLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(amazonScienceLink).isDisplayed(), "Amazon Science link is not displayed.");
+	}
+
+	public void assertMakeMoneyWithUsHeadingIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(makeMoneyWithUsHeading).isDisplayed(), "Make Money with Us heading is not displayed.");
+	}
+
+	public void assertSellProductsLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(sellProductsLink).isDisplayed(), "Sell Products on Amazon link is not displayed.");
+	}
+
+	public void assertSellOnBusinessLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(sellOnBusinessLink).isDisplayed(), "Sell on Amazon Business link is not displayed.");
+	}
+
+	public void assertSellAppsLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(sellAppsLink).isDisplayed(), "Sell Apps on Amazon link is not displayed.");
+	}
+
+	public void assertBecomeAffiliateLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(becomeAffiliateLink).isDisplayed(), "Become an Affiliate link is not displayed.");
+	}
+
+	public void assertAdvertiseProductsLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(advertiseProductsLink).isDisplayed(), "Advertise Your Products link is not displayed.");
+	}
+
+	public void assertSelfPublishLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(selfPublishLink).isDisplayed(), "Self-Publish with Us link is not displayed.");
+	}
+
+	public void assertHostHubLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(hostHubLink).isDisplayed(), "Host an Amazon Hub link is not displayed.");
+	}
+
+	public void assertSeeMoreLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(seeMoreLink).isDisplayed(), "See More Make Money with Us link is not displayed.");
+	}
+
+	public void assertAmazonPaymentProductsHeadingIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(amazonPaymentProductsHeading).isDisplayed(), "Amazon Payment Products heading is not displayed.");
+	}
+
+	public void assertAmazonBusinessCardLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(amazonBusinessCardLink).isDisplayed(), "Amazon Business Card link is not displayed.");
+	}
+
+	public void assertShopWithPointsLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(shopWithPointsLink).isDisplayed(), "Shop with Points link is not displayed.");
+	}
+
+	public void assertReloadYourBalanceLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(reloadYourBalanceLink).isDisplayed(), "Reload Your Balance link is not displayed.");
+	}
+
+	public void assertAmazonCurrencyConverterLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(amazonCurrencyConverterLink).isDisplayed(), "Amazon Currency Converter link is not displayed.");
+	}
+
+	public void assertLetUsHelpYouHeadingIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(letUsHelpYouHeading).isDisplayed(), "Let Us Help You heading is not displayed.");
+	}
+
+	public void assertAmazonCovidLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(amazonCovidLink).isDisplayed(), "Amazon and COVID-19 link is not displayed.");
+	}
+
+	public void assertYourAccountLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(yourAccountLink).isDisplayed(), "Your Account link is not displayed.");
+	}
+
+	public void assertYourOrdersLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(yourOrdersLink).isDisplayed(), "Your Orders link is not displayed.");
+	}
+
+	public void assertShippingRatesPoliciesLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(shippingRatesPoliciesLink).isDisplayed(), "Shipping Rates & Policies link is not displayed.");
+	}
+
+	public void assertReturnsReplacementsLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(returnsReplacementsLink).isDisplayed(), "Returns & Replacements link is not displayed.");
+	}
+
+	public void assertManageContentDevicesLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(manageContentDevicesLink).isDisplayed(), "Manage Your Content and Devices link is not displayed.");
+	}
+
+	public void assertHelpLinkIsDisplayed() {
+	    Assert.assertTrue(driver.findElement(helpLink).isDisplayed(), "Help link is not displayed.");
+	}
+
 }
