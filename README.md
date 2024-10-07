@@ -56,9 +56,8 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify navigation footer headings and links in product details page
 
 ## Backlog (Subject to Changes)
-- Verify product images are displayed
-- Verify product variations 
+- 
 
 ## Current Task 
-- Test case analysis
-  - Analyze next test case to automate
+- Verify product variations in product details page
+  - Stopped at writing locators in page object class
