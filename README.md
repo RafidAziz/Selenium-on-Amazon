@@ -60,4 +60,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify product variations in product details page
-  - Stopped at writing action methods for locators in page object class > setUpdatedPrice() method
+  - Stopped at test execution and results analysis
