@@ -60,6 +60,6 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Verify product variations in product details page
-  - Stopped at debugging > @Then ("The main product image should update to reflect the selected variation")
+  - Stopped at debugging > @Then ("The main product image should update to reflect the selected variation") > image button locator
 
 
