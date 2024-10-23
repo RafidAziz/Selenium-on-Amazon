@@ -54,12 +54,14 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Verify page sections in product details page
 - Verify navigation header in product details page
 - Verify navigation footer headings and links in product details page
+- Verify product variations in product details page
+
 
 ## Backlog (Subject to Changes)
 - 
 
 ## Current Task 
-- Verify product variations in product details page
-  - Stopped at debugging > @Then ("The main product image should update to reflect the selected variation") > image button locator
+- Upload test reports screenshots
+  - Cucumber and TestNG reports
 
 
