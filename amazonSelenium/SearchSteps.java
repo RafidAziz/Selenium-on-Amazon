@@ -337,6 +337,71 @@ public class SearchSteps extends BaseTest{
 	    prodDetailsPage.assertHelpLinkIsDisplayed();
 	}
 	
+	// Scenario: Verify product variations in product details page
+	@Then ("User should see the available product variation options")
+	public void userShouldSeeTheAvailableProductVariationOptions() {
+		prodDetailsPage.assert2BladeButtonIsDisplayed();
+		prodDetailsPage.assert8BladeButtonIsDisplayed();
+		prodDetailsPage.assert12BladeButtonIsDisplayed();
+	}
+
+	@And ("Each option should be clickable")
+	public void eachOptionShouldBeClickable() {
+		prodDetailsPage.assert2BladeButtonIsEnabled();
+		prodDetailsPage.assert8BladeButtonIsEnabled();
+		prodDetailsPage.assert12BladeButtonIsEnabled();
+	}
+
+	@When ("User selects product variations")
+	public void userSelectsProductVariations() {
+		prodDetailsPage.click2BladeButton();
+		prodDetailsPage.click8BladeButton();
+		prodDetailsPage.click12BladeButton();
+	}
+
+	@Then ("The selected variation should be highlighted")
+	public void theSelectedVariationShouldBeHighlighted() {
+		prodDetailsPage.click2BladeButton();
+		prodDetailsPage.assertSize2BladeTextIsDisplayed();
+		
+		prodDetailsPage.click8BladeButton();
+		prodDetailsPage.assertSize8BladeTextIsDisplayed();
+
+		prodDetailsPage.click12BladeButton();
+		prodDetailsPage.assertSize12BladeTextIsDisplayed();
+		
+		prodDetailsPage.click2BladeButton();
+	}
+
+	@Then ("The price should update according to the selected variation")
+	public void thePriceShouldUpdateAccordingToTheSelectedVariation() {
+		//stopped here
+		prodDetailsPage.setInitialPrice();
+		
+		prodDetailsPage.click8BladeButton();
+		prodDetailsPage.setUpdatedPrice();
+		prodDetailsPage.assertPriceDiffThanInitialPrice();
+		
+		prodDetailsPage.click12BladeButton();
+		prodDetailsPage.setUpdatedPrice();
+		prodDetailsPage.assertPriceDiffThanInitialPrice();
+		
+		prodDetailsPage.click2BladeButton();
+	}
+
+	@Then ("The main product image should update to reflect the selected variation")
+	public void theMainProductImageShouldUpdateToReflectTheSelectedVariation() {
+		prodDetailsPage.setInitialImgSrc(); 
+		
+		prodDetailsPage.click8BladeButton();
+		prodDetailsPage.setUpdatedImgSrc();
+		prodDetailsPage.assertImgSrcDiffThanInitial(); // fail here
+		
+		prodDetailsPage.click12BladeButton();
+		prodDetailsPage.setUpdatedImgSrc();
+		prodDetailsPage.assertImgSrcDiffThanInitial();
+	}
+	
 	@After
 	public void tearDown() {
 		if (driver!= null) {

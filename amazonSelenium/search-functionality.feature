@@ -84,4 +84,20 @@ Feature: Search product
 		Then User should see make money with us heading and links
 		Then User should see amazon payment products heading and links
 		Then User should see let us help you heading and links
+		
+	Scenario: Verify product variations in product details page
+#		Verifies the visibility and interactivity of product variation options.
+#		Confirms that selecting a variation updates the UI (highlighting the selection and changing the price).
+#		Checks if selecting a different variation updates the main product image accordingly.
+    When User is on the product details page
+    Then User should see the available product variation options
+    And Each option should be clickable
+
+    When User selects product variations
+    Then The selected variation should be highlighted
+    And The price should update according to the selected variation
+		And The main product image should update to reflect the selected variation
+    
+		
+	
 	

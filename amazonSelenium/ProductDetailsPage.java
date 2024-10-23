@@ -19,6 +19,10 @@ public class ProductDetailsPage extends BaseTest {
 	private String actualSeller;
 	private String returnsPolicyUrl = "https://www.amazon.com/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7&ref_=dp_ret_policy";
 	private String privacyNoticeUrl = "https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010";
+	private String initialPrice;
+	private String updatedPrice;
+	private String initialImgSrc;
+	private String updatedImgSrc;
 	
 	private By addToCartBtn = By.id("add-to-cart-button");
 	private By addedtoCartMsg = By.cssSelector("h1[class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']");
@@ -126,10 +130,43 @@ public class ProductDetailsPage extends BaseTest {
 	private By manageContentDevicesLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Manage Your Content and Devices']");
 	private By helpLink = By.xpath("//div[@id='navFooter']//a[normalize-space()='Help']");
 
+	// Locators for product variations
+	private By twoBladeButton = By.xpath("//p[normalize-space()='2 Blade']");
+	private By eightBladeButton = By.xpath("//p[normalize-space()='8 Blade']");
+	private By twelveBladeButton = By.xpath("//p[normalize-space()='12 Blade']");
+	private By priceWholeMiddle = By.xpath("//div[@id='apex_desktop_newAccordionRow']//span[@class='a-price-whole']");
+	private By priceWholeBuyNew = By.xpath("//div[@data-csa-c-buying-option-type='NEW']//span[@class='a-price-whole']");
+	private By mainProductImg = By.xpath("//body[1]/div[1]/div[1]/div[9]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[5]/span[1]/span[1]/span[1]/span[1]/img[1]");
+	private By size2BladeText = By.xpath("//span[@class='selection'][normalize-space()='2 Blade']");
+	private By size8BladeText = By.xpath("//span[@class='selection'][normalize-space()='8 Blade']");
+	private By size12BladeText = By.xpath("//span[@class='selection'][normalize-space()='12 Blade']");
+	
 	
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
 	}  
+	
+	public void setInitialPrice() {
+		waitTwoSeconds();
+		initialPrice = driver.findElement(priceWholeMiddle).getText();
+	}
+	
+	public void setUpdatedPrice() {
+		waitTwoSeconds();
+		updatedPrice = driver.findElement(priceWholeMiddle).getText();
+	}
+	
+	public void setInitialImgSrc() {
+		waitTwoSeconds();
+		waitTwoSeconds();
+		initialImgSrc = driver.findElement(mainProductImg).getAttribute("src");
+	}
+	
+	public void setUpdatedImgSrc() {
+		waitTwoSeconds();
+		waitTwoSeconds();
+		updatedImgSrc = driver.findElement(mainProductImg).getAttribute("src");
+	}
 	
 	// click add to cart button
 	public void clickAddToCartBtn() {
@@ -174,6 +211,18 @@ public class ProductDetailsPage extends BaseTest {
 	
 	public void clickReportAnIssueDropDown() {
 		driver.findElement(chooseDropDown).click();
+	}
+	
+	public void click2BladeButton() {
+		driver.findElement(twoBladeButton).click();
+	}
+	
+	public void click8BladeButton() {
+		driver.findElement(eightBladeButton).click();
+	}
+	
+	public void click12BladeButton() {
+		driver.findElement(twelveBladeButton).click();
 	}
 	
 	// get 'added to cart' text
@@ -607,5 +656,56 @@ public class ProductDetailsPage extends BaseTest {
 	public void assertHelpLinkIsDisplayed() {
 	    Assert.assertTrue(driver.findElement(helpLink).isDisplayed(), "Help link is not displayed.");
 	}
-
+	
+	// Assertions for Scenario: Verify product variations in product details page
+	public void assert2BladeButtonIsDisplayed() {
+		Assert.assertTrue(driver.findElement(twoBladeButton).isDisplayed(), "2 Blade button is not displayed.");
+	}
+	
+	public void assert8BladeButtonIsDisplayed() {
+		Assert.assertTrue(driver.findElement(eightBladeButton).isDisplayed(), "8 Blade button is not displayed.");
+	}
+	
+	public void assert12BladeButtonIsDisplayed() {
+		Assert.assertTrue(driver.findElement(twelveBladeButton).isDisplayed(), "12 Blade button is not displayed.");
+	}
+	
+	public void assert2BladeButtonIsEnabled() {
+		Assert.assertTrue(driver.findElement(twoBladeButton).isEnabled(), "2 Blade button is not clickable.");
+	}
+	
+	public void assert8BladeButtonIsEnabled() {
+		Assert.assertTrue(driver.findElement(eightBladeButton).isEnabled(), "8 Blade button is not clickable.");
+	}
+	
+	public void assert12BladeButtonIsEnabled() {
+		Assert.assertTrue(driver.findElement(twelveBladeButton).isEnabled(), "12 Blade button is not clickable.");
+	}
+	
+	public void assertSize2BladeTextIsDisplayed() {
+		waitTwoSeconds();
+		Assert.assertTrue(driver.findElement(size2BladeText).isDisplayed(), "2 Blade text is not displayed.");
+	}
+	
+	public void assertSize8BladeTextIsDisplayed() {
+		waitTwoSeconds();
+		Assert.assertTrue(driver.findElement(size8BladeText).isDisplayed(), "8 Blade text is not displayed.");
+	}
+	
+	public void assertSize12BladeTextIsDisplayed() {
+		waitTwoSeconds();
+		Assert.assertTrue(driver.findElement(size12BladeText).isDisplayed(), "12 Blade text is not displayed.");
+	}
+	
+	public void assertPriceDiffThanInitialPrice() {
+		System.out.println("updated price: " + updatedPrice);
+		System.out.println("initial price: " + initialPrice);
+		Assert.assertNotEquals(updatedPrice, initialPrice, "Price is not updated.");
+	}
+	
+	public void assertImgSrcDiffThanInitial() {
+		System.out.println("updated src: " + updatedImgSrc);
+		System.out.println("initial src: " + initialImgSrc);
+		Assert.assertNotEquals(updatedImgSrc, initialImgSrc, "Product image is not updated.");	
+	}
 }
