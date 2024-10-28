@@ -31,7 +31,10 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Selenium
 - TestNG
 - Java
-- Gherkins 
+- Gherkins
+
+## Code Architecture Diagram
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/443d2ae9-d270-4432-b767-47347901e314">
 
 ## Test Cases Automated
 - Valid login
