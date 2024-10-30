@@ -71,5 +71,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - 
 
 ## Current Task 
-- Generate and upload artifacts
-  - TBC
+- Automating test case: Verify product price on the product detail page matches the price in the cart
+  - Stopped at writing step definition > userNotesProductPrice()
