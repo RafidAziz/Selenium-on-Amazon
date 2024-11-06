@@ -19,6 +19,7 @@ public class ProductDetailsPage extends BaseTest {
 	private String actualSeller;
 	private String returnsPolicyUrl = "https://www.amazon.com/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7&ref_=dp_ret_policy";
 	private String privacyNoticeUrl = "https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010";
+	private String prodPrice;
 	private String initialPrice;
 	private String updatedPrice;
 	private String initialImgSrc;
@@ -135,6 +136,7 @@ public class ProductDetailsPage extends BaseTest {
 	private By eightBladeButton = By.xpath("//p[normalize-space()='8 Blade']");
 	private By twelveBladeButton = By.xpath("//p[normalize-space()='12 Blade']");
 	private By priceWholeMiddle = By.xpath("//div[@id='apex_desktop_newAccordionRow']//span[@class='a-price-whole']");
+	private By priceFractionMiddle = By.xpath("//span[@class='a-price aok-align-center reinventPricePriceToPayMargin priceToPay']//span[@class='a-price-fraction'][normalize-space()='97']");
 	private By priceWholeBuyNew = By.xpath("//div[@data-csa-c-buying-option-type='NEW']//span[@class='a-price-whole']");
 	private By mainProductImg = By.xpath("//body[1]/div[1]/div[1]/div[9]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[5]/span[1]/span[1]/span[1]/span[1]/img[1]");
 	private By size2BladeText = By.xpath("//span[@class='selection'][normalize-space()='2 Blade']");
@@ -145,6 +147,15 @@ public class ProductDetailsPage extends BaseTest {
 	public ProductDetailsPage(WebDriver driver) {
 		this.driver = driver;
 	}  
+	
+	public String getProdPrice() {
+		return prodPrice;
+	}
+	
+	public void setProdPrice() {
+		waitTwoSeconds();
+		prodPrice = "$" + driver.findElement(priceWholeMiddle).getText() + "." + driver.findElement(priceFractionMiddle).getText();
+	}
 	
 	public void setInitialPrice() {
 		waitTwoSeconds();

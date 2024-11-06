@@ -14,6 +14,7 @@ public class CartSteps extends BaseTest{
 
 	private String baseUrl = "https://www.amazon.com";
 	private String prodDetailsUrl = "https://www.amazon.com/Mueller-Austria-Chopper-Vegetable-Container/dp/B08N9Q24M9/ref=pd_cart_vw_crc_d_sccl_1_1/134-8582275-1630743?pd_rd_w=f1ILy&content-id=amzn1.sym.1c2f7c10-4d4d-4813-8c51-1798e23c9a80&pf_rd_p=1c2f7c10-4d4d-4813-8c51-1798e23c9a80&pf_rd_r=FG0R4R2WK063355XWJZ1&pd_rd_wg=RE3fK&pd_rd_r=0143a164-d2d8-4a85-b0ed-9924ec76da4f&pd_rd_i=B08N9Q24M9&th=1";
+	private String cartUrl = "https://www.amazon.com/gp/cart/view.html?ref_=nav_cart";
 	
 //	@Before
 //	public void setUp() {		
@@ -46,9 +47,23 @@ public class CartSteps extends BaseTest{
     public void prodAddedToCartSuccessfully() {
     	System.out.println(prodDetailsPage.getAddedToCartText());
     	Assert.assertEquals(prodDetailsPage.getAddedToCartText()
-    			, "Added to Cart"
+    			, "Added to cart"
     			, "Item was not added to cart");    	
     }
+    
+    
+//    Scenario Outline: Verify product price on the product detail page matches the price in the cart
+    @And ("User notes the product price")
+    public void userNotesProductPrice() {
+    	prodDetailsPage.setProdPrice();
+    }
+
+    @Then ("User should see the same product price in the cart as on the product detail page")
+    public void userSeesSameProductPriceInCart() {
+    	String prodPrice = prodDetailsPage.getProdPrice();
+    	cartPage.assertPriceInCartEqualsPriceInProdPage(prodPrice);
+    }
+
     
     // Remove product test case
     @When ("User is in the shopping cart page")
