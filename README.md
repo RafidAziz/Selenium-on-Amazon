@@ -46,6 +46,7 @@ It is an ongoing work in progress.
 - Verify navigation header in product details page
 - Verify navigation footer headings and links in product details page
 - Verify product variations in product details page
+- Verify product price on the product detail page matches the price in the cart
 
 ## Execution Demo
 https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4ddd-835b-a499aee7626f
@@ -71,5 +72,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - 
 
 ## Current Task 
-- Automating test case: Verify product price on the product detail page matches the price in the cart
-  - Stopped at execution and results analysis
+- Regression Testing
+  - Shopping Cart test suite
