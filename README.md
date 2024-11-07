@@ -74,4 +74,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Automate test case: Verify quantity added from product detail page matches quantity in the cart
-  - Stopped at writing gherkins steps
+  - Stopped at writing step definitions
