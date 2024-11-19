@@ -73,5 +73,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - 
 
 ## Current Task 
-- Automate test case: Verify quantity added from product detail page matches quantity in the cart
-  - Stopped at execution and results analysis (remove product before execution)
+- Regression testing
+  - Shopping cart test case suite
