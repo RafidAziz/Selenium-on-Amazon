@@ -74,4 +74,4 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Fix failed test case > Scenario Outline: Change product quantity in cart
-  - Caused by change in UI
+  - Failure caused by change in UI element from dropdown to buttons
