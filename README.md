@@ -73,5 +73,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - 
 
 ## Current Task 
-- Regression testing
-  - Shopping cart test case suite
+- Fix failed test case > Scenario Outline: Change product quantity in cart
+  - Caused by change in UI
