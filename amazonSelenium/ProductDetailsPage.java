@@ -20,6 +20,7 @@ public class ProductDetailsPage extends BaseTest {
 	private String returnsPolicyUrl = "https://www.amazon.com/gp/help/customer/display.html?nodeId=GKM69DUUYKQWKWX7&ref_=dp_ret_policy";
 	private String privacyNoticeUrl = "https://www.amazon.com/gp/help/customer/display.html?nodeId=201909010";
 	private String prodPrice;
+	private String prodQty;
 	private String initialPrice;
 	private String updatedPrice;
 	private String initialImgSrc;
@@ -27,7 +28,8 @@ public class ProductDetailsPage extends BaseTest {
 	
 	private By addToCartBtn = By.id("add-to-cart-button");
 	private By addedtoCartMsg = By.cssSelector("h1[class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']");
-	private By quantityDropDown = By.id("a-autoid-0-announce");
+	private By quantityDropDown = By.cssSelector(".a-dropdown-label");
+	private By quantityDropDownNum = By.cssSelector("span[id='a-autoid-2-announce'] span[class='a-dropdown-prompt']");
 	private By quantity2DropDown = By.id("quantity_1");
 	private By buyNowBtn = By.id("buy-now-button");
 	private By regularPriceRadioBtn = By.cssSelector("div[id='newAccordionRow_1'] i[class='a-icon a-accordion-radio a-icon-radio-inactive']");
@@ -152,6 +154,10 @@ public class ProductDetailsPage extends BaseTest {
 		return prodPrice;
 	}
 	
+	public String getProdQty() {
+		return prodQty;
+	}
+	
 	public void setProdPrice() {
 		waitTwoSeconds();
 		prodPrice = "$" + driver.findElement(priceWholeMiddle).getText() + "." + driver.findElement(priceFractionMiddle).getText();
@@ -177,6 +183,12 @@ public class ProductDetailsPage extends BaseTest {
 		waitTwoSeconds();
 		waitTwoSeconds();
 		updatedImgSrc = driver.findElement(mainProductImg).getAttribute("src");
+	}
+	
+	public void setProdQty() {
+		waitTwoSeconds();
+		waitTwoSeconds();
+		prodQty = driver.findElement(quantityDropDownNum).getText();
 	}
 	
 	// click add to cart button
@@ -244,7 +256,8 @@ public class ProductDetailsPage extends BaseTest {
 	}
 	
 	public void changeDropDownQuantityToTwo() {
-		driver.findElement(quantityDropDown).click();
+		// stopped debugging here
+		retryLocatingDynamicElement(driver, quantityDropDown);
 		driver.findElement(quantity2DropDown).click();
 	}
 	

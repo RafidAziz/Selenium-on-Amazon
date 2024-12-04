@@ -14,7 +14,16 @@ Feature: Shopping Cart Module
    	And User notes the product price
    	And User is in the shopping cart page
    	Then User should see the same product price in the cart as on the product detail page
-   
+   	Then User clicks on delete link
+   	
+  Scenario Outline: Verify quantity added from product detail page matches quantity in the cart
+  	When User is in the product details page
+  	And User changes quantity of product
+  	And User notes the product quantity
+  	And User clicks on add to cart button
+  	And User is in the shopping cart page
+  	Then User should see the same product quantity in the cart as on the product detail page
+  			 	
 	 Scenario Outline: Change product quantity in cart
 		When User is in the shopping cart page
 		And User changes product quantity in cart

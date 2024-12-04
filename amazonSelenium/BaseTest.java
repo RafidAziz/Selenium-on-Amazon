@@ -1,8 +1,10 @@
 package amazonSelenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
@@ -43,6 +45,7 @@ public class BaseTest {
 
     public void navigateToURL(String url) {
         driver.get(url);
+        waitTwoSeconds();
     }
     
     public void navigateToHomePage(String url) {
@@ -86,6 +89,22 @@ public class BaseTest {
 		        break;
 		    }
 		}
+    }
+    
+    public void retryLocatingDynamicElement(WebDriver driver, By element) {
+        while (true) {
+            try {
+				driver.navigate().refresh();
+				waitTwoSeconds();
+				System.out.println("element object: " + element);
+				System.out.println("element toString(): " + element.toString());
+                driver.findElement(element).click();   // attempt to click element
+                break;
+            } catch (Exception e) {
+                System.out.println("Element not interactable, retrying...");
+                waitTwoSeconds();
+            }
+        }
     }
     
     public void closeDriver() {
