@@ -73,7 +73,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - 
 
 ## Current Task 
-- Regression testing and analysis
-  - Shopping cart test suite
-  - Debugging getting value from quantity box
-  - Regression test cart test suite again
+- Test case analysis
+  - 
