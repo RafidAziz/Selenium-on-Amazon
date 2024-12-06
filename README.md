@@ -72,8 +72,6 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 ## Backlog (Subject to Changes)
 1. Search Functionality
 
-	•	Verify the search bar accepts and returns results for valid queries.
-	•	Verify search results match the entered keywords.
 	•	Verify filters (e.g., category, brand, price range) refine search results as expected.
 	•	Verify the “Sort by” feature (e.g., price, popularity, ratings) works correctly.
 	•	Verify the search suggestions dropdown populates as the user types.
@@ -142,6 +140,6 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 	•	Verify sensitive data (e.g., passwords, payment info) is encrypted. 
 
 ## Current Task 
-- Test case analysis
-  - TBC
+- Automate test case: Verify filters (e.g., category, brand, price range) refine search results as expected
+  - Write BDD steps in feature file
     
