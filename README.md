@@ -140,6 +140,7 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 	•	Verify sensitive data (e.g., passwords, payment info) is encrypted. 
 
 ## Current Task 
-- Automate test case: Verify filters (e.g., category, brand, price range) refine search results as expected
-  - Write BDD steps in feature file
+- Install AI tool > Healenium plugin for self healing test automation
+  - Stopped at 8:23 of [setup video]([url](https://youtu.be/Ed5HyfwZhq4?si=nDraDzQmBalpTpHJ&t=503))
+  - Install docker
     
