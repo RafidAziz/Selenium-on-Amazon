@@ -141,6 +141,6 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 
 ## Current Task 
 - Install AI tool > Healenium plugin for self healing test automation
-  - Stopped at 8:23 of [setup video]([url](https://youtu.be/Ed5HyfwZhq4?si=nDraDzQmBalpTpHJ&t=503))
+  - Stopped at 8:23 of [setup video](https://youtu.be/Ed5HyfwZhq4?si=nDraDzQmBalpTpHJ&t=503)
   - Install docker
     
