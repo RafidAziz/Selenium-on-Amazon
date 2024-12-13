@@ -145,4 +145,6 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
 - Install AI tool > Healenium plugin for self healing test automation
   - Reference setup video [setup video](https://youtu.be/Ed5HyfwZhq4?si=nDraDzQmBalpTpHJ&t=503)
   - Write test to test that Healenium's self healing feature works
+    - Cucumber feature file
+    - Click search bar test with an incorrectly given locator
     
