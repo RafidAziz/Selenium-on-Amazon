@@ -147,4 +147,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
   - Write test to test that Healenium's self healing feature works
     - Cucumber feature file
     - Click search bar test with an incorrectly given locator
+  - Write HomePageHealeniumTest.java
     
