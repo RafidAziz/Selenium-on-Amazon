@@ -150,4 +150,5 @@ https://github.com/RafidAziz/Selenium-on-Amazon/assets/167278169/870879d0-7aee-4
   - Write HomePageHealeniumTest.java
   - Write BaseTestHealenium.java
   - Write HealeniumTestSteps.java
+    - Stopped at doing first successful execution 
     
